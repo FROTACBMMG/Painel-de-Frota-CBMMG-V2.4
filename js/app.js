@@ -51,6 +51,8 @@ async function iniciarPainel() {
         // aplica a padronização
         dadosOriginais = classificarFrota(dadosOriginais);
 
+        console.log("Após classificar:", dadosOriginais[0].situacao);
+
         dadosFiltrados = [...dadosOriginais];
 
         //--------------------------------------------------

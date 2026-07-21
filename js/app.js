@@ -48,6 +48,9 @@ async function iniciarPainel() {
 
         dadosOriginais = await carregarDados();
 
+        // aplica a padronização
+        dadosOriginais = classificarFrota(dadosOriginais);
+
         dadosFiltrados = [...dadosOriginais];
 
         //--------------------------------------------------
@@ -138,7 +141,9 @@ async function atualizarDados() {
 
     try {
 
-        dadosOriginais = await carregarDados();
+       dadosOriginais = await carregarDados();
+
+        dadosOriginais = classificarFrota(dadosOriginais);
 
         dadosFiltrados = [...dadosOriginais];
 

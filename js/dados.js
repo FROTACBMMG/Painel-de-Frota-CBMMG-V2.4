@@ -79,11 +79,9 @@ async function carregarDados() {
 
     console.table(MAPA_COLUNAS);
 
-    return registros.map(
+    const frota = registros.map(prepararRegistro);
 
-        prepararRegistro
-
-    );
+		return classificarFrota(frota);
 
 }
 

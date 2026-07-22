@@ -32,11 +32,23 @@ function inicializarFiltros() {
         valoresUnicos(dadosOriginais, "situacao")
     );
 
+    document
+    .getElementById("filtroComando")
+    .addEventListener(
+        "change",
+        function () {
+
+            atualizarFiltroUnidade();
+
+            aplicarFiltros();
+
+        }
+    );
+
     [
-        "filtroComando",
-        "filtroUnidade",
-        "filtroSubclasse",
-        "filtroSituacao"
+    "filtroUnidade",
+    "filtroSubclasse",
+    "filtroSituacao"
 
     ].forEach(id => {
 
@@ -70,6 +82,46 @@ function inicializarFiltros() {
             "click",
             limparFiltros
         );
+
+}
+
+//==================================================
+// Atualiza lista de unidades conforme comando
+//==================================================
+
+function atualizarFiltroUnidade() {
+
+    const comando = document.getElementById("filtroComando").value;
+
+    let unidades;
+
+    if (comando === "") {
+
+        unidades = valoresUnicos(
+            dadosOriginais,
+            "unidadePrincipal"
+        );
+
+    } else {
+
+        unidades = valoresUnicos(
+
+            dadosOriginais.filter(v =>
+
+                v.comando === comando
+
+            ),
+
+            "unidadePrincipal"
+
+        );
+
+    }
+
+    preencherSelect(
+        "filtroUnidade",
+        unidades
+    );
 
 }
 
@@ -174,6 +226,8 @@ function limparFiltros() {
     document.getElementById("filtroSubclasse").value = "";
 
     document.getElementById("filtroSituacao").value = "";
+
+    atualizarFiltroUnidade();
 
     document.getElementById("filtroPrefixo").value = "";
 

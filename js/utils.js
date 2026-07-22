@@ -58,33 +58,29 @@ function removerAcentos(texto){
 
 function paraNumero(valor){
 
-    if(valor===null || valor===undefined)
-
+    if(valor === null || valor === undefined)
         return 0;
 
-    if(typeof valor==="number")
-
+    if(typeof valor === "number")
         return valor;
 
     valor = valor.toString().trim();
 
-    if(valor==="")
-
+    if(valor === "")
         return 0;
 
     valor = valor
-        .replace(/R\$/g,"")
+        .replace(/R\$/gi,"")
+        .replace(/%/g,"")
         .replace(/\s/g,"")
         .replace(/\./g,"")
-        .replace(",",".");
-        .replace("%","")
+        .replace(",", ".");
 
-    const numero = Number(valor);
+    const numero = parseFloat(valor);
 
     return isNaN(numero) ? 0 : numero;
 
 }
-
 
 //==================================================
 // Formata moeda

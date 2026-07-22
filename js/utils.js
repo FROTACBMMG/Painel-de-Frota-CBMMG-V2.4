@@ -77,6 +77,7 @@ function paraNumero(valor){
         .replace(/\s/g,"")
         .replace(/\./g,"")
         .replace(",",".");
+        .replace("%","")
 
     const numero = Number(valor);
 

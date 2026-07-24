@@ -14,6 +14,8 @@
 
 function abrirModal(registro){
 
+    console.log(registro);
+
     atualizarTexto(
 
         "modalPlaca",

@@ -16,13 +16,26 @@ function abrirModal(registro){
 
     console.log(registro);
 
-    atualizarTexto(
+            console.log("Disponibilidade:", registro.indiceDisponibilidade);
+            console.log("Valor venal:", registro.valorVenal);
 
-        "modalPlaca",
+            atualizarTexto(
+                "modalDisponibilidade",
+                "TESTE"
+            );
 
-        registro.placa
+            atualizarTexto(
+                "modalValorVenal",
+                "TESTE"
+            );
 
-    );
+            atualizarTexto(
+
+                "modalPlaca",
+
+                registro.placa
+
+            );
 
     atualizarTexto(
 

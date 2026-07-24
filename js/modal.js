@@ -19,23 +19,33 @@ function abrirModal(registro){
             console.log("Disponibilidade:", registro.indiceDisponibilidade);
             console.log("Valor venal:", registro.valorVenal);
 
-            const disponibilidade =
-    registro.indiceDisponibilidade.toFixed(2) + "%";
+        const disponibilidade =
+            registro.indiceDisponibilidade.toFixed(2) + "%";
 
-const valor =
-    moeda(registro.valorVenal);
+        const valor =
+            moeda(registro.valorVenal);
 
-console.log("Disponibilidade:", disponibilidade);
-console.log("Valor Venal:", valor);
+            console.log("Disponibilidade:", disponibilidade);
+            console.log("Valor Venal:", valor);
 
-atualizarTexto(
-    "modalDisponibilidade",
-    disponibilidade
+    atualizarTexto(
+        "modalDisponibilidade",
+        disponibilidade
+    );
+
+    atualizarTexto(
+        "modalValorVenal",
+        valor
 );
 
-atualizarTexto(
-    "modalValorVenal",
-    valor
+    console.log(
+    "HTML Disponibilidade:",
+    document.getElementById("modalDisponibilidade").textContent
+);
+
+console.log(
+    "HTML Valor:",
+    document.getElementById("modalValorVenal").textContent
 );
 
             atualizarTexto(

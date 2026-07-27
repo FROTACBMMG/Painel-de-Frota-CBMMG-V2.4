@@ -53,65 +53,112 @@ function atualizarGraficos(dados){
 
 function criarGraficoSituacao(){
 
-    const canvas = document.getElementById(
-
-        "graficoSituacao"
-
-    );
+    const canvas = document.getElementById("graficoSituacao");
 
     if(!canvas)
-
         return;
 
-    graficoSituacao = new Chart(
+    graficoSituacao = new Chart(canvas,{
 
-        canvas,
+        type:"doughnut",
 
-        {
+        data:{
 
-            type:"pie",
+            labels:["Disponível","Indisponível"],
 
-            data:{
+            datasets:[{
 
-                labels:[
+                data:[100,0],
 
-                    "Disponíveis",
+                backgroundColor:[
 
-                    "Em Manutenção",
+                    "#198754",   // verde
 
-                    "Processo de Descarga"
+                    "#dee2e6"    // cinza
 
                 ],
 
-                datasets:[{
+                borderWidth:0
 
-                    data:[0,0,0]
+            }]
 
-                }]
+        },
 
-            },
+        options:{
 
-            options:{
+            responsive:true,
 
-                responsive:true,
+            maintainAspectRatio:false,
 
-                maintainAspectRatio:false,
+            cutout:"70%",
 
-                plugins:{
+            plugins:{
 
-                    legend:{
-
-                        position:"bottom"
-
-                    }
-
+                legend:{
+                    display:false
                 }
 
             }
 
-        }
+        },
 
-    );
+        plugins:[{
+
+            id:"textoCentral",
+
+            afterDraw(chart){
+
+                const {
+
+                    ctx,
+
+                    chartArea:{left,right,top,bottom}
+
+                } = chart;
+
+                const valor = chart.data.datasets[0].data[0];
+
+                ctx.save();
+
+                ctx.textAlign="center";
+
+                ctx.textBaseline="middle";
+
+                ctx.fillStyle="#212529";
+
+                ctx.font="bold 28px Arial";
+
+                ctx.fillText(
+
+                    valor.toFixed(2)+"%",
+
+                    (left+right)/2,
+
+                    (top+bottom)/2-10
+
+                );
+
+                ctx.font="16px Arial";
+
+                ctx.fillStyle="#6c757d";
+
+                ctx.fillText(
+
+                    "Disponibilidade",
+
+                    (left+right)/2,
+
+                    (top+bottom)/2+18
+
+                );
+
+                ctx.restore();
+
+            }
+
+        }]
+
+    });
 
 }
 
@@ -123,37 +170,36 @@ function criarGraficoSituacao(){
 function atualizarGraficoSituacao(dados){
 
     if(!graficoSituacao)
-
         return;
 
-    const disponiveis = dados.filter(function(v){
+    if(dados.length===0){
 
-        return v.situacao===SITUACAO.DISPONIVEL;
+        graficoSituacao.data.datasets[0].data=[0,100];
+        graficoSituacao.update();
 
-    }).length;
+        return;
+    }
 
+    //------------------------------------------------
+    // Média da disponibilidade
+    //------------------------------------------------
 
-    const manutencao = dados.filter(function(v){
+    const disponibilidadeMedia =
+        dados.reduce(function(total,item){
 
-        return v.situacao===SITUACAO.MANUTENCAO;
+            return total + paraNumero(item.indiceDisponibilidade);
 
-    }).length;
+        },0) / dados.length;
 
-
-    const descarga = dados.filter(function(v){
-
-        return v.situacao===SITUACAO.DESCARGA;
-
-    }).length;
-
+    //------------------------------------------------
+    // Atualiza gráfico
+    //------------------------------------------------
 
     graficoSituacao.data.datasets[0].data=[
 
-        disponiveis,
+        disponibilidadeMedia,
 
-        manutencao,
-
-        descarga
+        100-disponibilidadeMedia
 
     ];
 

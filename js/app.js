@@ -65,8 +65,6 @@ async function iniciarPainel() {
 
         inicializarGraficos();
 
-        atualizarPainel();
-
         atualizarUltimaAtualizacao();
 
         mostrarStatus(

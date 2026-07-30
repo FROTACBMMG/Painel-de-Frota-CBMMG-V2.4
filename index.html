@@ -52,57 +52,77 @@
 <!-- ====================================================== -->
 <!-- Barra Superior                                         -->
 <!-- ====================================================== -->
-
 <header class="topo-painel">
 
     <div class="container-fluid">
 
         <div class="row align-items-center">
 
+            <!-- Logo -->
 
-			<div class="col-2">
+            <div class="col-2">
 
- 			  		 <div class="d-flex align-items-center">
+                <img
+                    src="img/logo_cbmmg.png"
+                    class="logo-cbmmg"
+                    alt="CBMMG">
 
-               		 <img
-                		    src="img/logo_cbmmg.png"
-                		    class="logo-cbmmg"
-                		    alt="CBMMG">
+            </div>
 
-              		  <div class="ms-3">
 
-			</div>
+            <!-- Título -->
 
-			<div class="col-8 text-center">
+            <div class="col-8 text-center">
 
- 			   <h2 class="titulo-painel">
-                        Painel da Frota Operacional
-                    </h2>
+                <h1 class="titulo-painel">
 
-                    <div class="subtitulo-painel">
-                        Corpo de Bombeiros Militar de Minas Gerais
-                    </div>
+                    Painel da Frota Operacional
 
-			</div>
+                </h1>
 
-			<div class="col-2 text-end">
+                <div class="subtitulo-painel">
 
-			 		   <button
-             		   id="btnAtualizar"
-             		   class="btn btn-light">
+                    Corpo de Bombeiros Militar de Minas Gerais
 
-             		   <i class="fa-solid fa-rotate"></i>
-           		     Atualizar
+                </div>
 
-         		   </button>
+                <div class="info-painel">
 
-			</div>            
+                    <span id="statusSistema"></span>
+
+                    •
+
+                    Última atualização:
+
+                    <span id="ultimaAtualizacao"></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Botão -->
+
+            <div class="col-2 text-end">
+
+                <button
+                    id="btnAtualizar"
+                    class="btn btn-light">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Atualizar Dados
+
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
 </header>
+
 
 
 <!-- ====================================================== -->

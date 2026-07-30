@@ -73,7 +73,27 @@ body{
     margin:0;
 
 }
+.status-frota{
 
+    margin-top:8px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.ultima-atualizacao{
+
+    margin-top:10px;
+
+    color:white;
+
+    font-size:14px;
+
+}
 
 /*==================================================*/
 /* Filtros                                           */

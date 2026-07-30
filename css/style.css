@@ -236,3 +236,94 @@ table.dataTable tbody tr.selected{
     }
 
 }
+
+/*==================================================
+FUNDO DO SITE
+==================================================*/
+
+body{
+
+    background:#eef2f6;
+
+}
+
+
+/*==================================================
+CABEÇALHO
+==================================================*/
+
+.topo-painel{
+
+    background:linear-gradient(90deg,#b30000,#7a0000);
+
+    color:white;
+
+    padding:18px 30px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+
+}
+
+.logo-cbmmg{
+
+    height:70px;
+
+}
+
+.titulo-painel{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.subtitulo-painel{
+
+    opacity:.85;
+
+    font-size:15px;
+
+}
+
+
+/*==================================================
+CARDS
+==================================================*/
+
+.card{
+
+    border:none;
+
+    border-radius:16px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.card-header{
+
+    background:#ffffff;
+
+    font-weight:600;
+
+}
+
+
+/*==================================================
+BOTÃO
+==================================================*/
+
+#btnAtualizar{
+
+    font-weight:600;
+
+    border-radius:10px;
+
+    padding:8px 18px;
+
+}

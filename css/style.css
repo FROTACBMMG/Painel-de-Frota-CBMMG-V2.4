@@ -254,11 +254,21 @@ CABEÇALHO
 
 .topo-painel{
 
-    background:linear-gradient(90deg,#b30000,#7a0000);
+    background:linear-gradient(
+
+        90deg,
+
+        #8b0000,
+
+        #b30000,
+
+        #8b0000
+
+    );
 
     color:white;
 
-    padding:10px 20px;
+    padding:8px 30px;
 
     margin-bottom:25px;
 
@@ -274,19 +284,29 @@ CABEÇALHO
 
 .titulo-painel{
 
-    margin:0;
-
-    font-size:28px;
+    font-size:40px;
 
     font-weight:700;
+
+    margin:0;
 
 }
 
 .subtitulo-painel{
 
-    opacity:.85;
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+.info-painel{
+
+    margin-top:8px;
 
     font-size:15px;
+
+    color:white;
 
 }
 

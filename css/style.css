@@ -327,3 +327,53 @@ BOTÃO
     padding:8px 18px;
 
 }
+
+/*==================================================
+CARDS MODERNOS
+==================================================*/
+
+.card{
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+}
+
+.card-titulo{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#555;
+
+    margin-bottom:12px;
+
+}
+
+.card h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.card h5{
+
+    font-size:22px;
+
+}
+
+.card h6{
+
+    line-height:1.4;
+
+}

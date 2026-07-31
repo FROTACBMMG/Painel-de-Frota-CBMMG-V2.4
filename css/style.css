@@ -386,40 +386,38 @@ CARDS MODERNOS
 
 }
 
+/*==================================================
+CARDS MODERNOS
+==================================================*/
+
 .card-titulo{
 
-    font-size:13px;
+    font-size:15px;
 
     font-weight:600;
 
-    color:#666;
+    color:#555;
 
-    margin-bottom:6px;
+    margin-bottom:12px;
 
 }
 
 .card h2{
 
-    font-size:26px;
+    font-size:34px;
 
     font-weight:700;
-
-    line-height:1;
 
 }
 
 .card h5{
 
-    font-size:17px;
-
-    font-weight:600;
+    font-size:22px;
 
 }
 
 .card h6{
 
-    font-size:14px;
-
-    line-height:1.2;
+    line-height:1.4;
 
 }

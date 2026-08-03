@@ -184,12 +184,7 @@ function atualizarGraficoSituacao(dados){
     // Média da disponibilidade
     //------------------------------------------------
 
-    const disponibilidadeMedia =
-        dados.reduce(function(total,item){
-
-            return total + paraNumero(item.indiceDisponibilidade);
-
-        },0) / dados.length;
+    const disponibilidade = calcularDisponibilidade(dados);
 
     //------------------------------------------------
     // Atualiza gráfico

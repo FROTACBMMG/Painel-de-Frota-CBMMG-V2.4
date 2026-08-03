@@ -306,61 +306,81 @@ function criarGraficoSubclasse(){
 function atualizarGraficoSubclasse(dados){
 
     if(!graficoSubclasse)
-
         return;
 
-    const agrupado = agrupar(
+    //------------------------------------------------
+    // Agrupa por Comando
+    //------------------------------------------------
 
-        dados,
+    const comandos = {};
 
-        "subclasse"
+    dados.forEach(function(v){
 
-    );
+        if(!comandos[v.comando]){
 
-    const lista = Object.entries(
+            comandos[v.comando]={
 
-        agrupado
+                total:0,
 
-    )
+                disponiveis:0
 
-    .map(function(item){
+            };
 
-        return{
+        }
 
-            nome:item[0],
+        comandos[v.comando].total++;
 
-            quantidade:item[1]
+        if(v.situacao===SITUACAO.DISPONIVEL){
 
-        };
+            comandos[v.comando].disponiveis++;
 
-    })
+        }
 
-    .sort(function(a,b){
+    });
 
-        return b.quantidade-a.quantidade;
+    //------------------------------------------------
+    // Calcula disponibilidade
+    //------------------------------------------------
 
-    })
+    const lista = Object.entries(comandos)
 
-    .slice(0,15);
+        .map(function(item){
 
+            return{
+
+                comando:item[0],
+
+                disponibilidade:
+
+                    (item[1].disponiveis /
+
+                     item[1].total) *100
+
+            };
+
+        })
+
+        .sort(function(a,b){
+
+            return b.disponibilidade-a.disponibilidade;
+
+        });
+
+    //------------------------------------------------
+    // Atualiza gráfico
+    //------------------------------------------------
 
     graficoSubclasse.data.labels =
 
-        lista.map(function(item){
+        lista.map(v=>v.comando);
 
-            return item.nome;
+    graficoSubclasse.data.datasets[0].label =
 
-        });
-
+        "Disponibilidade (%)";
 
     graficoSubclasse.data.datasets[0].data =
 
-        lista.map(function(item){
-
-            return item.quantidade;
-
-        });
-
+        lista.map(v=>v.disponibilidade.toFixed(2));
 
     graficoSubclasse.update();
 

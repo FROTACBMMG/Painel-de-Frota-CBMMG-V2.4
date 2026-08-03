@@ -1,4 +1,4 @@
-﻿/********************************************************************
+/********************************************************************
  * Painel da Frota do CBMMG
  * graficos.js
  * Versão 2.0
@@ -180,11 +180,13 @@ function atualizarGraficoSituacao(dados){
         return;
     }
 
-    //------------------------------------------------
-    // Média da disponibilidade
-    //------------------------------------------------
 
-    const disponibilidade = calcularDisponibilidade(dados);
+    //------------------------------------------------
+// Disponibilidade operacional em tempo real
+//------------------------------------------------
+
+const disponibilidadeMedia = calcularDisponibilidade(dados);
+    
 
     //------------------------------------------------
     // Atualiza gráfico

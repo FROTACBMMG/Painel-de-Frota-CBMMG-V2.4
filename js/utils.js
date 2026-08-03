@@ -300,3 +300,22 @@ function log(mensagem){
     console.log("[Painel CBMMG]",mensagem);
 
 }
+
+//==================================================
+// Calcula disponibilidade operacional
+//==================================================
+
+function calcularDisponibilidade(dados){
+
+    if(dados.length===0)
+        return 0;
+
+    const disponiveis = dados.filter(function(v){
+
+        return v.situacao === SITUACAO.DISPONIVEL;
+
+    }).length;
+
+    return (disponiveis / dados.length) * 100;
+
+}

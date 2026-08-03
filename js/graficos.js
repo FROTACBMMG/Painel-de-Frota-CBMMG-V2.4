@@ -342,29 +342,37 @@ function atualizarGraficoSubclasse(dados){
     // Calcula disponibilidade
     //------------------------------------------------
 
-    const lista = Object.entries(comandos)
+   const lista = Object.entries(comandos)
 
-        .map(function(item){
+    .filter(function(item){
 
-            return{
+    return item[0]
+        && item[0] !== "CÓD UNID. VEÍCULO NÃO CADASTRADA"
+        && item[0] !== "NÃO INFORMADO";
 
-                comando:item[0],
+})
 
-                disponibilidade:
+    .map(function(item){
 
-                    (item[1].disponiveis /
+        return{
 
-                     item[1].total) *100
+            comando:item[0],
 
-            };
+            disponibilidade:
 
-        })
+                (item[1].disponiveis /
 
-        .sort(function(a,b){
+                 item[1].total) *100
 
-            return b.disponibilidade-a.disponibilidade;
+        };
 
-        });
+    })
+
+    .sort(function(a,b){
+
+        return b.disponibilidade-a.disponibilidade;
+
+    });
 
     //------------------------------------------------
     // Atualiza gráfico

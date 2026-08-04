@@ -191,13 +191,32 @@ function atualizarBarrasIndicadores(dados){
     const descarga =
         dados.filter(v=>v.situacao===SITUACAO.DESCARGA).length;
 
+    const percDisponiveis = disponiveis / total * 100;
+    const percManutencao = manutencao / total * 100;
+    const percDescarga = descarga / total * 100;
+
     document.getElementById("barraDisponiveis").style.width =
-        (disponiveis/total*100)+"%";
+        percDisponiveis + "%";
 
     document.getElementById("barraManutencao").style.width =
-        (manutencao/total*100)+"%";
+        percManutencao + "%";
 
     document.getElementById("barraDescarga").style.width =
-        (descarga/total*100)+"%";
+        percDescarga + "%";
+
+    atualizarTexto(
+        "percentualDisponiveis",
+        percDisponiveis.toFixed(1) + "%"
+    );
+
+    atualizarTexto(
+        "percentualManutencao",
+        percManutencao.toFixed(1) + "%"
+    );
+
+    atualizarTexto(
+        "percentualDescarga",
+        percDescarga.toFixed(1) + "%"
+    );
 
 }

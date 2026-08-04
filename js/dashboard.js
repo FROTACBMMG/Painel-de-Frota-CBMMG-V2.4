@@ -26,6 +26,8 @@ function atualizarIndicadores(dados) {
 
     atualizarCombustivel(dados);
 
+    atualizarBarrasIndicadores(dados);
+
 }
 
 //==================================================
@@ -167,5 +169,35 @@ function atualizarCombustivel(dados) {
         dados[0].combustivel
 
     );
+
+}
+
+//==================================================
+// Indicadores coloridos
+//==================================================
+
+function atualizarBarrasIndicadores(dados){
+
+    const total = dados.length;
+
+    if(total===0) return;
+
+    const disponiveis =
+        dados.filter(v=>v.situacao===SITUACAO.DISPONIVEL).length;
+
+    const manutencao =
+        dados.filter(v=>v.situacao===SITUACAO.MANUTENCAO).length;
+
+    const descarga =
+        dados.filter(v=>v.situacao===SITUACAO.DESCARGA).length;
+
+    document.getElementById("barraDisponiveis").style.width =
+        (disponiveis/total*100)+"%";
+
+    document.getElementById("barraManutencao").style.width =
+        (manutencao/total*100)+"%";
+
+    document.getElementById("barraDescarga").style.width =
+        (descarga/total*100)+"%";
 
 }

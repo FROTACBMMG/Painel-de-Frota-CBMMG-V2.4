@@ -439,3 +439,19 @@ CARDS MODERNOS
     color:#fff;
 
 }
+
+.card-indicador{
+
+    height:110px;
+
+}
+
+.card-indicador .card-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}

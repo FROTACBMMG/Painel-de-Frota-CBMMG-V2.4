@@ -6,8 +6,7 @@
  * Responsável apenas pelos gráficos.
  *
  * Gráficos:
- * • Situação da Frota
- * • Subclasses (Top 15)
+ * • Disponibilidade por Comando
  ********************************************************************/
 
 "use strict";
@@ -15,8 +14,6 @@
 //==================================================
 // Objetos Chart.js
 //==================================================
-
-let graficoSituacao = null;
 
 let graficoSubclasse = null;
 
@@ -26,8 +23,6 @@ let graficoSubclasse = null;
 //==================================================
 
 function inicializarGraficos(){
-
-    criarGraficoSituacao();
 
     criarGraficoSubclasse();
 
@@ -39,8 +34,6 @@ function inicializarGraficos(){
 //==================================================
 
 function atualizarGraficos(dados){
-
-    atualizarGraficoSituacao(dados);
 
     atualizarGraficoSubclasse(dados);
 

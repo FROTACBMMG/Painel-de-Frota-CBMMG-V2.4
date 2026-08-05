@@ -173,7 +173,7 @@ function atualizarCombustivel(dados) {
 }
 
 //==================================================
-// Indicadores coloridos
+// Barras Indicadores
 //==================================================
 
 function atualizarBarrasIndicadores(dados){
@@ -198,20 +198,17 @@ function atualizarBarrasIndicadores(dados){
     document.getElementById("barraDisponiveis").style.width =
         percDisponiveis + "%";
 
-    document.getElementById("txtBarraDisponiveis").textContent =
-    (disponiveis/total*100).toFixed(1) + "%";
+   
 
     document.getElementById("barraManutencao").style.width =
         percManutencao + "%";
 
-    document.getElementById("txtBarraManutencao").textContent =
-    (manutencao/total*100).toFixed(1) + "%";
+   
 
     document.getElementById("barraDescarga").style.width =
         percDescarga + "%";
 
-    document.getElementById("txtBarraDescarga").textContent =
-    (descarga/total*100).toFixed(1) + "%";
+   
 
     atualizarTexto(
         "percentualDisponiveis",

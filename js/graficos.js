@@ -257,29 +257,20 @@ function criarGraficoSubclasse(){
 
                     y:{
                         beginAtZero:true,
-                        max:100,
-
                         ticks:{
+                                precision:0
+                               }
+                        },
 
-                            precision:0
-
-                        }
-
-                    },
-
-                    x:{
-
+                   x:{
                         ticks:{
-
                             font:{
-
                                 size:10
-
-                            }
-
-                        }
-
-                    }
+                                 },
+                            maxRotation:45,
+                            minRotation:45
+                               }
+                      }
 
                 }
 

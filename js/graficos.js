@@ -255,9 +255,9 @@ function criarGraficoSubclasse(){
 
                 scales:{
 
-                    x:{
-
+                    y:{
                         beginAtZero:true,
+                        max:100,
 
                         ticks:{
 
@@ -267,7 +267,7 @@ function criarGraficoSubclasse(){
 
                     },
 
-                    y:{
+                    x:{
 
                         ticks:{
 

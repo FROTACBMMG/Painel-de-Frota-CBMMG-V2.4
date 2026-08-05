@@ -241,7 +241,7 @@ function criarGraficoSubclasse(){
 
                 maintainAspectRatio:false,
 
-                indexAxis:"y",
+                indexAxis:"x",
 
                 plugins:{
 

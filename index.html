@@ -306,318 +306,212 @@
 
 </div>
 
-	<!-- ====================================================== -->
-	<!-- CARDS  E  GRÁFICOS                                -->
-	<!-- ====================================================== -->
+<!-- ====================================================== -->
+<!-- CARDS E GRÁFICO -->
+<!-- ====================================================== -->
 
-	<div class="row mb-4">
+<div class="row mb-4">
 
+    <!-- ================================================= -->
     <!-- COLUNA ESQUERDA -->
+    <!-- ================================================= -->
+
     <div class="col-lg-5">
 
         <div class="row g-3">
 
-            <!-- CARD 1 TOTAL-->
+            <!-- CARD 1 -->
             <div class="col-md-4">
-                <div class="col-xl-2 col-md-4">
 
-    <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-truck"></i>
+                            <i class="fa-solid fa-fire"></i>
+                            Total da Frota
+                        </h6>
 
-    <i class="fa-solid fa-truck">
-	</i><i class="fa-solid fa-fire"></i>
+                        <h2 id="totalFrota" class="fw-bold">
+                            0
+                        </h2>
 
-    Total da Frota
+                    </div>
 
-</h6>
+                </div>
 
-            <h2
-
-                id="totalFrota"
-
-                class="fw-bold">
-
-                0
-
-            </h2>
-
-        </div>
-
-    </div>
-
-</div>
             </div>
 
-            <!-- CARD 2 DISPONÍVEIS-->
+            <!-- CARD 2 -->
+
             <div class="col-md-4">
-                <div class="col-xl-2 col-md-4">
 
-    <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-circle-check text-success"></i>
+                            Disponíveis
+                        </h6>
 
-    <i class="fa-solid fa-circle-check text-success"></i>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
 
-    Disponíveis
+                            <h2 id="disponiveis"
+                                class="text-success fw-bold mb-0">
+                                0
+                            </h2>
 
-</h6>
+                            <span id="percentualDisponiveis"
+                                  class="fw-bold text-success">
+                                0%
+                            </span>
 
-            <div class="d-flex justify-content-between align-items-center">
+                        </div>
 
-    <h2
-        id="disponiveis"
-        class="text-success fw-bold mb-0">
-        0
-    </h2>
+                        <div class="progress">
 
-</div>
+                            <div id="barraDisponiveis"
+                                 class="progress-bar bg-success"
+                                 style="width:0%">
+                            </div>
 
-<div class="d-flex align-items-center mt-2">
+                        </div>
 
-    <span
-        id="percentualDisponiveis"
-        class="me-2 fw-bold text-success"
-        style="min-width:55px;">
-        0%
-    </span>
+                    </div>
 
-    <div class="progress flex-grow-1">
+                </div>
 
-        <div
-            id="barraDisponiveis"
-            class="progress-bar bg-success"
-            style="width:0%">
-        </div>
-
-    </div>
-
-</div>
-
-        </div>
-
-    </div>
-
-</div>
             </div>
 
-            <!-- CARD 3 MANUTENÇÃO-->
+            <!-- CARD 3 -->
+
             <div class="col-md-4">
-                <div class="col-xl-2 col-md-4">
 
-   <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-screwdriver-wrench text-warning"></i>
+                            Em Manutenção
+                        </h6>
 
-   				 <i class="fa-solid fa-screwdriver-wrench text-warning"></i>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
 
-  					  Em Manutenção
+                            <h2 id="manutencao"
+                                class="text-warning fw-bold mb-0">
+                                0
+                            </h2>
 
-			</h6>
+                            <span id="percentualManutencao"
+                                  class="fw-bold text-warning">
+                                0%
+                            </span>
 
-            <div class="d-flex justify-content-between align-items-center">
+                        </div>
 
-    <h2
-        id="manutencao"
-        class="text-warning fw-bold mb-0">
-        0
-    </h2>
+                        <div class="progress">
 
-</div>
+                            <div id="barraManutencao"
+                                 class="progress-bar bg-warning"
+                                 style="width:0%">
+                            </div>
 
-			<div class="d-flex align-items-center mt-2">
+                        </div>
 
-    <span
-        id="percentualManutencao"
-        class="me-2 fw-bold text-warning"
-        style="min-width:55px;">
-        0%
-    </span>
+                    </div>
 
-    <div class="progress flex-grow-1">
+                </div>
 
-        <div
-            id="barraManutencao"
-            class="progress-bar bg-warning"
-            style="width:0%">
-        </div>
-
-    </div>
-
-</div>
-			
-        </div>
-
-    </div>
-
-</div>
             </div>
 
-            <!-- CARD 4 PROCESSO DE DESCARGA-->
+            <!-- CARD 4 -->
+
             <div class="col-md-4">
-                <div class="col-xl-2 col-md-4">
 
-    <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-arrow-down text-danger"></i>
+                            Processo de Descarga
+                        </h6>
 
-  			  <i class="fa-solid fa-arrow-down text-danger"></i>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
 
-    			Processo de Descarga
+                            <h2 id="descarga"
+                                class="text-danger fw-bold mb-0">
+                                0
+                            </h2>
 
-			</h6>
+                            <span id="percentualDescarga"
+                                  class="fw-bold text-danger">
+                                0%
+                            </span>
 
-            <div class="d-flex justify-content-between align-items-center">
+                        </div>
 
-    <h2
-        id="descarga"
-        class="text-danger fw-bold mb-0">
-        0
-    </h2>
+                        <div class="progress">
 
-</div>
+                            <div id="barraDescarga"
+                                 class="progress-bar bg-danger"
+                                 style="width:0%">
+                            </div>
 
-		<div class="d-flex align-items-center mt-2">
+                        </div>
 
-    <span
-        id="percentualDescarga"
-        class="me-2 fw-bold text-danger"
-        style="min-width:55px;">
-        0%
-    </span>
+                    </div>
 
-    <div class="progress flex-grow-1">
+                </div>
 
-        <div
-            id="barraDescarga"
-            class="progress-bar bg-danger"
-            style="width:0%">
-        </div>
-
-    </div>
-
-</div>	
-			
-        </div>
-
-    </div>
-
-</div>
             </div>
 
-            <!-- CARD 5 TIPO DE COMBUSTÍVEL-->
+            <!-- CARD 5 -->
+
             <div class="col-md-4">
-                <div class="col-xl-2 col-md-4">
 
-    <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-gas-pump text-primary"></i>
+                            Tipo de Combustível
+                        </h6>
 
-				<i class="fa-solid fa-gas-pump text-primary"></i>
+                        <h5 id="cardCombustivel"
+                            class="fw-bold">
+                            ---
+                        </h5>
 
-                Tipo de Combustível
+                    </div>
 
-            </h6>
-
-            <h5
-
-                id="cardCombustivel"
-
-                class="fw-bold">
-
-                —
-
-            </h5>
-
-        </div>
-
-    </div>
-
-</div>
+                </div>
 
             </div>
 
-            <!-- CARD 6 SUBCLASSE-->
+            <!-- CARD 6 -->
+
             <div class="col-md-4">
-               <div class="col-xl-2 col-md-4">
 
-    <div class="card shadow card-indicador">
+                <div class="card shadow card-indicador">
 
-        <div class="card-body">
+                    <div class="card-body">
 
-            <h6 class="card-titulo">
+                        <h6 class="card-titulo">
+                            <i class="fa-solid fa-truck"></i>
+                            Subclasse
+                        </h6>
 
-				<i class="fa-solid fa-truck"></i>
-				
-                Subclasse
+                        <h5 id="cardSubclasse"
+                            class="fw-bold">
+                            ---
+                        </h5>
 
-            </h6>
-
-            <h6
-
-                id="cardSubclasse"
-
-                class="fw-bold">
-
-                —
-
-            </h6>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- COLUNA DIREITA -->
-    <div class="col-lg-7">
-
-        <div class="row mb-4">
-
-    <!-- Subclasses -->
-
-   <div class="col-lg-12 mb-3">
-
-        <div class="card shadow h-100">
-
-            <div class="card-header">
-
-                <strong>
-
-                    Disponibilidade da Frota por Comando
-
-                </strong>
-
-            </div>
-
-            <div class="card-body">
-
-                <div
-                    style="height:400px;">
-
-                    <canvas
-                        id="graficoSubclasse">
-
-                    </canvas>
+                    </div>
 
                 </div>
 
@@ -627,7 +521,33 @@
 
     </div>
 
-</div>
+    <!-- ================================================= -->
+    <!-- COLUNA DIREITA -->
+    <!-- ================================================= -->
+
+    <div class="col-lg-7">
+
+        <div class="card shadow h-100">
+
+            <div class="card-header">
+
+                <strong>
+                    Disponibilidade da Frota por Comando
+                </strong>
+
+            </div>
+
+            <div class="card-body">
+
+                <div style="height:430px;">
+
+                    <canvas id="graficoSubclasse"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 

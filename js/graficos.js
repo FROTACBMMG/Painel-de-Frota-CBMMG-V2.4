@@ -264,11 +264,12 @@ function criarGraficoSubclasse(){
 
                    x:{
                         ticks:{
-                            font:{
-                                size:10
-                                 },
+                            autoSkip:false,
                             maxRotation:0,
-                            minRotation:0
+                            minRotation:0,
+                            font:{
+                                size:11
+                                 }
                                }
                      }
 

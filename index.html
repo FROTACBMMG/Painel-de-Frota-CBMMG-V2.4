@@ -131,142 +131,109 @@
 <!-- FILTROS                                                -->
 <!-- ====================================================== -->
 
-<div class="card shadow card-filtros">
+<div class="card-body">
 
+    <div class="row g-3">
 
-    <div class="card-body">
+        <!-- COMANDO -->
+        <div class="col-md">
 
-		 <div class="row g-3">
-	     <div class="col-md">
+            <select
+                id="filtroComando"
+                class="form-select">
 
-                <select
+                <option value="">
+                    Comando Op.
+                </option>
 
-                    id="filtroComando"
+            </select>
 
-                    class="form-select">
+        </div>
 
-                    <option value="">
+        <!-- UNIDADE -->
+        <div class="col-md">
 
-                        Comando Op.
+            <select
+                id="filtroUnidade"
+                class="form-select">
 
-                    </option>
+                <option value="">
+                    Unidade Principal
+                </option>
 
-                </select>
+            </select>
 
-            </div>
+        </div>
 
+        <!-- SUBCLASSE -->
+        <div class="col-md">
 
-            <div class="col-md">
+            <select
+                id="filtroSubclasse"
+                class="form-select">
 
+                <option value="">
+                    Subclasse
+                </option>
 
-                <select
+            </select>
 
-                    id="filtroUnidade"
+        </div>
 
-                    class="form-select">
+        <!-- SITUAÇÃO -->
+        <div class="col-md">
 
-                    <option value="">
+            <select
+                id="filtroSituacao"
+                class="form-select">
 
-                        Unidade Principal
+                <option value="">
+                    Situação
+                </option>
 
-                    </option>
+            </select>
 
-                </select>
+        </div>
 
-            </div>
+        <!-- PREFIXO -->
+        <div class="col-md">
 
+            <input
+                id="filtroPrefixo"
+                class="form-control"
+                type="text"
+                placeholder="Digite o prefixo">
 
-            <div class="col-md">
+        </div>
 
-                <select
+        <!-- PLACA -->
+        <div class="col-md">
 
-                    id="filtroSubclasse"
+            <input
+                id="filtroPlaca"
+                class="form-control"
+                type="text"
+                placeholder="Digite a placa">
 
-                    class="form-select">
+        </div>
 
-                    <option value="">
+        <!-- LIMPAR -->
+        <div class="col-md-2">
 
-                       Subclasse
+            <button
+                id="btnLimparFiltros"
+                class="btn btn-secondary w-100">
 
-                    </option>
+                <i class="fa-solid fa-broom"></i>
+                Limpar
 
-                </select>
+            </button>
 
-	
-	</div>
-
-
-            <div class="col-md">
-
-                
-                <select
-
-                    id="filtroSituacao"
-
-                    class="form-select">
-
-                    <option value="">
-
-                        Situação
-
-                    </option>
-
-                </select>
-
-            </div>
-
-
-	    <div class="col-md">
-
-   		 
-   		 <input
-
-      		  id="filtroPrefixo"
-
-      		  class="form-control"
-
-     		   type="text"
-
-    		    placeholder="Digite o prefixo">
-
-		</div>
-
-
-		<div class="col-md">
-
-  		  
-  		  <input
-
-     		   id="filtroPlaca"
-
-     		   class="form-control"
-
-    		    type="text"
-
-   		     placeholder="Digite a placa">
-
-		</div>
-		
-		<div class="col-md-2 d-flex align-items-end">
-
-   		 <button
-       			 id="btnLimparFiltros"
-       		 class="btn btn-secondary w-100">
-
-       		 <i class="fa-solid fa-broom"></i>
-
-       			 Limpar
-
-    		</button>
-			
-			</div>
-
-		</div>
+        </div>
 
     </div>
 
 </div>
-
 <!-- ====================================================== -->
 <!-- CARDS E GRÁFICO -->
 <!-- ====================================================== -->

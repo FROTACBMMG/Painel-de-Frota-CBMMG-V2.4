@@ -1311,7 +1311,7 @@ body {
    --------------------------------------------------------- */
 
 .card:has(#filtroComando) + .row {
-    margin-top: 18px !important;
+    margin-top: 40px !important;
 }
 
 

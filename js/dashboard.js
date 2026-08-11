@@ -24,7 +24,7 @@ function atualizarIndicadores(dados) {
 
     atualizarSubclasse(dados);
 
-    atualizarCombustivel(dados);
+    atualizarIdadeMedia(dados);
 
     atualizarBarrasIndicadores(dados);
 
@@ -142,35 +142,6 @@ function atualizarSubclasse(dados) {
 
 }
 
-//==================================================
-// Tipo de Combustível
-//==================================================
-
-function atualizarCombustivel(dados) {
-
-    if (dados.length !== 1) {
-
-        atualizarTexto(
-
-            "cardCombustivel",
-
-            "---"
-
-        );
-
-        return;
-
-    }
-
-    atualizarTexto(
-
-        "cardCombustivel",
-
-        dados[0].combustivel
-
-    );
-
-}
 
 //==================================================
 // Barras Indicadores

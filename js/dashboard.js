@@ -47,6 +47,33 @@ function atualizarTotal(dados) {
 }
 
 //==================================================
+// Idade Média da Frota
+//==================================================
+
+function atualizarIdadeMedia(dados) {
+
+    if (!dados || dados.length === 0) {
+
+        atualizarTexto(
+            "idadeMedia",
+            "0 anos"
+        );
+
+        return;
+    }
+
+    const idade = media(
+        dados,
+        "idade"
+    );
+
+    atualizarTexto(
+        "idadeMedia",
+        idade.toFixed(1) + " anos"
+    );
+}
+
+//==================================================
 // Disponíveis
 //==================================================
 

@@ -1,464 +1,27 @@
-﻿/********************************************************************
- Painel da Frota do CBMMG
- style.css
- Versão 2.0
+/********************************************************************
+  PAINEL DA FROTA DO CBMMG
+  STYLE.CSS - V3 CONSOLIDADO
 ********************************************************************/
 
-body{
+/* ================================================================
+   1. CONFIGURAÇÕES GERAIS
+================================================================ */
 
-    background:#f5f6f8;
+* {
+    box-sizing: border-box;
+}
 
-    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
-
+body {
+    margin: 0;
+    background: #eef2f6;
+    color: #212529;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-/*==================================================*/
-/* Navbar                                            */
-/*==================================================*/
-
-.navbar{
-
-    background:#b71c1c !important;
-
-}
-
-.navbar-brand{
-
-    font-size:1.2rem;
-
-    font-weight:700;
-
-}
-
-
-/*==================================================*/
-/* Cards                                             */
-/*==================================================*/
-
-.card{
-
-    border:none;
-
-    border-radius:12px;
-
-}
-
-.card-header{
-
-    background:#ffffff;
-
-    border-bottom:1px solid #ececec;
-
-    font-weight:600;
-
-}
-
-.card-body h2{
-
-    font-size:2rem;
-
-    margin:0;
-
-}
-
-.card-body h5{
-
-    margin:0;
-
-}
-
-.card-body h6{
-
-    margin:0;
-
-}
-.status-frota{
-
-    margin-top:8px;
-
-    color:white;
-
-    font-size:15px;
-
-    font-weight:600;
-
-}
-
-.ultima-atualizacao{
-
-    margin-top:10px;
-
-    color:white;
-
-    font-size:14px;
-
-}
-
-/*==================================================*/
-/* Filtros                                           */
-/*==================================================*/
-
-.form-label{
-
-    font-weight:600;
-
-    font-size:.90rem;
-
-}
-
-.form-select{
-
-    height:40px;
-
-}
-
-
-/*==================================================*/
-/* Gráficos                                          */
-/*==================================================*/
-
-canvas{
-
-    width:100% !important;
-
-    height:100% !important;
-
-}
-
-
-/*==================================================*/
-/* DataTables                                        */
-/*==================================================*/
-
-table.dataTable{
-
-    width:100% !important;
-
-    font-size:.90rem;
-
-}
-
-table.dataTable thead th{
-
-    background:#eeeeee;
-
-    font-weight:600;
-
-}
-
-table.dataTable tbody tr{
-
-    cursor:pointer;
-
-}
-
-table.dataTable tbody tr:hover{
-
-    background:#f3f3f3;
-
-}
-
-table.dataTable tbody tr.selected{
-
-    background:#dbeeff !important;
-
-}
-
-
-/*==================================================*/
-/* Modal                                             */
-/*==================================================*/
-
-.modal-header{
-
-    background:#b71c1c;
-
-    color:#ffffff;
-
-}
-
-.modal-title{
-
-    font-weight:600;
-
-}
-
-.modal-body strong{
-
-    display:block;
-
-    margin-bottom:3px;
-
-}
-
-.modal-body div{
-
-    margin-bottom:12px;
-
-}
-
-
-/*==================================================*/
-/* Botões                                            */
-/*==================================================*/
-
-.btn{
-
-    border-radius:8px;
-
-}
-
-
-/*==================================================*/
-/* Status                                            */
-/*==================================================*/
-
-#statusSistema{
-
-    font-size:.95rem;
-
-}
-
-#ultimaAtualizacao{
-
-    font-size:1rem;
-
-}
-
-
-/*==================================================*/
-/* Responsividade                                    */
-/*==================================================*/
-
-@media (max-width:992px){
-
-    .card-body h2{
-
-        font-size:1.6rem;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .card-body{
-
-        text-align:center;
-
-    }
-
-    .table-responsive{
-
-        overflow-x:auto;
-
-    }
-
-}
-
-/*==================================================
-FUNDO DO SITE
-==================================================*/
-
-body{
-
-    background:#eef2f6;
-
-}
-
-
-/*==================================================
-CABEÇALHO
-==================================================*/
-
-.topo-painel{
-
-    background:linear-gradient(
-
-        90deg,
-
-        #8b0000,
-
-        #b30000,
-
-        #8b0000
-
-    );
-
-    color:white;
-
-    padding:8px 30px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
-
-}
-
-.logo-cbmmg{
-
-    height: 100px;
-
-}
-
-.titulo-painel{
-
-    font-size:40px;
-
-    font-weight:700;
-
-    margin:0;
-
-}
-
-.subtitulo-painel{
-
-    font-size:18px;
-
-    opacity:.95;
-
-}
-
-.info-painel{
-
-    margin-top:8px;
-
-    font-size:15px;
-
-    color:white;
-
-}
-
-
-/*==================================================
-CARDS
-==================================================*/
-
-.card{
-
-    border:none;
-
-    border-radius:16px;
-
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-
-}
-
-.card-header{
-
-    background:#ffffff;
-
-    font-weight:600;
-
-}
-
-
-/*==================================================
-BOTÃO
-==================================================*/
-
-#btnAtualizar{
-
-    font-weight:600;
-
-    border-radius:10px;
-
-    padding:8px 18px;
-
-}
-
-/*==================================================
-CARDS MODERNOS
-==================================================*/
-
-.card{
-
-    transition:.25s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-
-}
-
-/*==================================================
-CARDS MODERNOS
-==================================================*/
-
-.card-titulo{
-
-    font-size:13px;
-
-    font-weight:600;
-
-    color:#666;
-
-    margin-bottom:6px;
-
-}
-
-.card h2{
-
-    font-size:26px;
-
-    font-weight:700;
-
-}
-
-.card h5{
-
-    font-size:17px;
-
-}
-
-.card h6{
-
-    line-height:1.4;
-
-}
-
-.barra-indicador{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    padding-right:8px;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    color:#fff;
-
-}
-
-.card-indicador{
-
-    height:110px;
-
-}
-
-.card-indicador .card-body{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-}
-
-/*==================================================
-  VISUAL V3 - CABEÇALHO
-==================================================*/
+/* ================================================================
+   2. CABEÇALHO
+================================================================ */
 
 .topo-painel {
     background: linear-gradient(
@@ -471,229 +34,54 @@ CARDS MODERNOS
     color: #ffffff;
 
     padding: 10px 30px;
-
-    margin-bottom: 18px;
-
-    border-radius: 0 0 14px 14px;
-
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
-}
-
-.logo-cbmmg {
-    height: 90px;
-    width: auto;
-    object-fit: contain;
-}
-
-.titulo-painel {
-    font-size: 36px;
-    font-weight: 700;
-
-    margin: 0;
-
-    letter-spacing: 0.3px;
-}
-
-.subtitulo-painel {
-    font-size: 16px;
-
-    margin-top: 2px;
-
-    opacity: 0.90;
-}
-
-.ultima-atualizacao {
-    margin-top: 7px;
-
-    font-size: 13px;
-
-    color: rgba(255,255,255,0.90);
-}
-
-#btnAtualizar {
-    border: none;
-
-    font-weight: 600;
-
-    padding: 8px 16px;
-
-    border-radius: 8px;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-
-    transition: 0.2s;
-}
-
-#btnAtualizar:hover {
-    transform: translateY(-1px);
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
-}
-
-/*==================================================
-  VISUAL V3 - FILTROS
-==================================================*/
-
-.card-filtros {
-    border: none;
-
-    border-radius: 14px;
-
-    background: #ffffff;
-
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-
-    margin-bottom: 18px;
-}
-
-.card-filtros .card-body {
-    padding: 14px 18px;
-}
-
-.card-filtros .form-label {
-    color: #555;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    margin-bottom: 5px;
-
-    text-transform: uppercase;
-}
-
-.card-filtros .form-select,
-.card-filtros .form-control {
-    border: 1px solid #dfe3e8;
-
-    border-radius: 8px;
-
-    height: 38px;
-
-    font-size: 13px;
-
-    box-shadow: none;
-}
-
-.card-filtros .form-select:focus,
-.card-filtros .form-control:focus {
-    border-color: #b71c1c;
-
-    box-shadow: 0 0 0 2px rgba(183,28,28,0.10);
-}
-
-#btnLimparFiltros {
-    height: 38px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    font-size: 13px;
-
-    font-weight: 600;
-}
-
-/* ============================================================
-   ============================================================
-   PAINEL DA FROTA - VISUAL V3
-   CSS PRINCIPAL
-   ============================================================
-   Cole este bloco NO FINAL do style.css
-   ============================================================
-*/
-
-
-/* ============================================================
-   1. CONFIGURAÇÕES GERAIS
-   ============================================================ */
-
-body {
-    background: #f4f6f8;
-    color: #212529;
-}
-
-
-/* ============================================================
-   2. CABEÇALHO
-   ============================================================ */
-
-.topo-painel {
-    background: linear-gradient(
-        135deg,
-        #8b0000 0%,
-        #b30000 50%,
-        #8f0000 100%
-    );
-
-    color: #ffffff;
-
-    padding: 10px 28px;
-
     margin-bottom: 18px;
 
     border-radius: 0 0 14px 14px;
 
     box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.18);
+        0 4px 14px rgba(0, 0, 0, 0.20);
 }
-
-
-/* Logo */
 
 .logo-cbmmg {
     height: 90px;
-
     width: auto;
 
     object-fit: contain;
-
     display: block;
 }
-
-
-/* Título */
 
 .titulo-painel {
     margin: 0;
 
     font-size: 36px;
-
     font-weight: 700;
 
     line-height: 1.1;
-
     letter-spacing: 0.2px;
 }
-
-
-/* Subtítulo */
 
 .subtitulo-painel {
     margin-top: 4px;
 
     font-size: 16px;
-
     line-height: 1.2;
 
     opacity: 0.92;
 }
 
-
-/* Área de atualização */
-
 .ultima-atualizacao {
     margin-top: 7px;
 
     font-size: 13px;
-
     line-height: 1.35;
 
     color: rgba(255, 255, 255, 0.92);
 }
 
 
-/* Botão atualizar */
+/* ================================================================
+   3. BOTÃO ATUALIZAR
+================================================================ */
 
 #btnAtualizar {
     border: none;
@@ -703,15 +91,14 @@ body {
     padding: 8px 16px;
 
     font-size: 14px;
-
     font-weight: 600;
 
     box-shadow:
         0 2px 6px rgba(0, 0, 0, 0.16);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.20s ease,
+        box-shadow 0.20s ease;
 }
 
 #btnAtualizar:hover {
@@ -722,9 +109,9 @@ body {
 }
 
 
-/* ============================================================
-   3. ÁREA DOS FILTROS
-   ============================================================ */
+/* ================================================================
+   4. CARD DOS FILTROS
+================================================================ */
 
 .card-filtros {
     border: none !important;
@@ -736,39 +123,38 @@ body {
     margin-bottom: 18px;
 
     box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.07) !important;
+        0 4px 14px rgba(0, 0, 0, 0.10) !important;
+
+    transition:
+        transform 0.20s ease,
+        box-shadow 0.20s ease;
+}
+
+
+/* Animação do card dos filtros */
+
+.card-filtros:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.14) !important;
 }
 
 
 /* Corpo dos filtros */
 
 .card-filtros .card-body {
-    padding: 14px 18px 15px;
+    padding: 14px 18px !important;
 }
 
 
-/* Labels */
-
-.card-filtros .form-label {
-    margin-bottom: 5px;
-
-    color: #4b5563;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.2px;
-}
-
-
-/* Campos */
+/* ================================================================
+   5. CAMPOS DOS FILTROS
+================================================================ */
 
 .card-filtros .form-select,
 .card-filtros .form-control {
-    height: 38px;
+    height: 40px;
 
     border: 1px solid #d9dee4;
 
@@ -783,12 +169,24 @@ body {
     box-shadow: none;
 
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        border-color 0.20s ease,
+        box-shadow 0.20s ease,
+        transform 0.20s ease;
 }
 
 
-/* Foco */
+/* Efeito ao passar o mouse */
+
+.card-filtros .form-select:hover,
+.card-filtros .form-control:hover {
+    border-color: #9aa7b3;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Efeito ao clicar */
 
 .card-filtros .form-select:focus,
 .card-filtros .form-control:focus {
@@ -799,42 +197,56 @@ body {
 }
 
 
-/* Botão limpar */
+/* ================================================================
+   6. BOTÃO LIMPAR FILTROS
+================================================================ */
 
 #btnLimparFiltros {
-    height: 38px;
+    height: 40px;
 
     border: none;
 
     border-radius: 8px;
 
     font-size: 13px;
-
     font-weight: 600;
 
     background-color: #6c757d;
 
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+        transform 0.20s ease,
+        box-shadow 0.20s ease,
+        background-color 0.20s ease;
 }
 
 #btnLimparFiltros:hover {
     background-color: #5c636a;
 
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 
-/* ============================================================
-   4. ÁREA PRINCIPAL - CARDS + GRÁFICO
-   ============================================================ */
-
+/* ================================================================
+   7. ESPAÇO ENTRE FILTROS E CARDS/GRÁFICO
+================================================================ */
 
 /*
-   Mantém o espaçamento entre a coluna dos cards
-   e a coluna do gráfico.
+   IMPORTANTE:
+   Mantém o espaço visual entre o card dos filtros
+   e a área dos indicadores.
 */
+
+.card-filtros + .row {
+    margin-top: 18px !important;
+}
+
+
+/* ================================================================
+   8. ÁREA PRINCIPAL - CARDS + GRÁFICO
+================================================================ */
 
 .col-lg-5,
 .col-lg-7 {
@@ -842,19 +254,22 @@ body {
 }
 
 
-/* ============================================================
-   5. CARDS DOS INDICADORES
-   ============================================================ */
+/* Espaçamento entre cards */
+
+.row.g-3 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
+}
 
 
-/*
-   Todos os cards passam a ter a mesma altura.
-*/
+/* ================================================================
+   9. CARDS DOS INDICADORES
+================================================================ */
 
 .card-indicador {
     height: 100% !important;
 
-    min-height: 108px;
+    min-height: 122px;
 
     border: none !important;
 
@@ -873,7 +288,7 @@ body {
 }
 
 
-/* Efeito discreto ao passar o mouse */
+/* Animação dos cards */
 
 .card-indicador:hover {
     transform: translateY(-2px);
@@ -886,6 +301,8 @@ body {
 /* Corpo dos cards */
 
 .card-indicador .card-body {
+    height: 100%;
+
     padding: 13px 15px;
 
     display: flex;
@@ -893,19 +310,19 @@ body {
     flex-direction: column;
 
     justify-content: space-between;
-
-    height: 100%;
 }
 
 
-/* Título do card */
+/* ================================================================
+   10. TÍTULOS DOS CARDS
+================================================================ */
 
 .card-titulo {
     margin: 0 0 7px 0;
 
-    color: #4b5563;
+    color: #212529;
 
-    font-size: 13px;
+    font-size: 15px;
 
     font-weight: 600;
 
@@ -914,15 +331,14 @@ body {
     white-space: nowrap;
 }
 
-
-/* Ícones */
-
 .card-titulo i {
     margin-right: 4px;
 }
 
 
-/* Números */
+/* ================================================================
+   11. NÚMEROS DOS CARDS
+================================================================ */
 
 .card-indicador h2 {
     margin: 0;
@@ -935,7 +351,18 @@ body {
 }
 
 
-/* Texto dos cards de combustível/subclasse */
+/* Total da frota */
+
+#totalFrota {
+    margin-top: 8px;
+
+    font-size: 27px;
+
+    line-height: 1;
+}
+
+
+/* Combustível e subclasse */
 
 .card-indicador h5,
 .card-indicador h6 {
@@ -951,16 +378,15 @@ body {
 }
 
 
-/* ============================================================
-   6. BARRAS DE DISPONIBILIDADE
-   ============================================================ */
-
+/* ================================================================
+   12. BARRAS DE DISPONIBILIDADE
+================================================================ */
 
 /*
    Estrutura:
-   
+
    [████████████████████] 80,5%
-   
+
    O percentual fica DEPOIS da barra.
 */
 
@@ -979,7 +405,7 @@ body {
 }
 
 
-/* Barra */
+/* Barra colorida */
 
 .card-indicador .progress-bar {
     height: 100%;
@@ -987,11 +413,11 @@ body {
     border-radius: 7px;
 
     transition:
-        width 0.4s ease;
+        width 0.40s ease;
 }
 
 
-/* Área que contém barra + percentual */
+/* Linha contendo barra + percentual */
 
 .card-indicador .d-flex.align-items-center.mt-2 {
     width: 100%;
@@ -1000,9 +426,7 @@ body {
 }
 
 
-/*
-   Percentual depois da barra.
-*/
+/* Percentual depois da barra */
 
 #percentualDisponiveis,
 #percentualManutencao,
@@ -1010,7 +434,6 @@ body {
     min-width: 42px !important;
 
     margin-left: 0 !important;
-
     margin-right: 0 !important;
 
     text-align: right;
@@ -1023,44 +446,25 @@ body {
 }
 
 
-/* ============================================================
-   7. CARD TOTAL
-   ============================================================ */
-
-#totalFrota {
-    margin-top: 8px;
-
-    font-size: 27px;
-
-    line-height: 1;
-}
-
-
-/* ============================================================
-   8. GRÁFICO
-   ============================================================ */
-
-
-/*
-   O gráfico ocupa toda a coluna direita
-   e fica alinhado com os cards.
-*/
+/* ================================================================
+   13. GRÁFICO DE DISPONIBILIDADE POR COMANDO
+================================================================ */
 
 .col-lg-7 > .card {
     height: 100% !important;
 
-    min-height: 234px;
+    min-height: 252px;
 
     border: none !important;
 
     border-radius: 13px !important;
 
+    background: #ffffff;
+
     box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.08) !important;
 
     overflow: hidden;
-
-    background: #ffffff;
 }
 
 
@@ -1094,7 +498,7 @@ body {
 }
 
 
-/* Container do canvas */
+/* Canvas */
 
 #graficoSubclasse {
     width: 100% !important;
@@ -1103,21 +507,106 @@ body {
 }
 
 
-/* ============================================================
-   9. TABELA
-   ============================================================ */
+/* ================================================================
+   14. TABELA
+================================================================ */
 
 #tabelaFrota {
+    width: 100% !important;
+
     font-size: 13px;
 }
 
+table.dataTable {
+    width: 100% !important;
+}
 
-/* ============================================================
-   10. RESPONSIVIDADE
-   ============================================================ */
+table.dataTable thead th {
+    background: #eeeeee;
+
+    font-weight: 600;
+}
+
+table.dataTable tbody tr {
+    cursor: pointer;
+}
+
+table.dataTable tbody tr:hover {
+    background: #f3f3f3;
+}
+
+table.dataTable tbody tr.selected {
+    background: #dbeeff !important;
+}
 
 
-/* Tablets */
+/* ================================================================
+   15. CARDS GERAIS
+================================================================ */
+
+.card {
+    border: none;
+}
+
+.card-header {
+    background: #ffffff;
+
+    border-bottom: 1px solid #ececec;
+
+    font-weight: 600;
+}
+
+
+/* ================================================================
+   16. BOTÕES GERAIS
+================================================================ */
+
+.btn {
+    border-radius: 8px;
+}
+
+
+/* ================================================================
+   17. MODAL
+================================================================ */
+
+.modal-header {
+    background: #b71c1c;
+
+    color: #ffffff;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body strong {
+    display: block;
+
+    margin-bottom: 3px;
+}
+
+.modal-body div {
+    margin-bottom: 12px;
+}
+
+
+/* ================================================================
+   18. STATUS
+================================================================ */
+
+#statusSistema {
+    font-size: 0.95rem;
+}
+
+#ultimaAtualizacao {
+    font-size: 1rem;
+}
+
+
+/* ================================================================
+   19. RESPONSIVIDADE - TABLETS
+================================================================ */
 
 @media (max-width: 991.98px) {
 
@@ -1134,13 +623,15 @@ body {
     }
 
     .card-indicador {
-        min-height: 105px;
+        min-height: 115px;
     }
 
 }
 
 
-/* Celulares */
+/* ================================================================
+   20. RESPONSIVIDADE - CELULARES
+================================================================ */
 
 @media (max-width: 767.98px) {
 
@@ -1184,21 +675,21 @@ body {
         font-size: 24px;
     }
 
+    /*
+       Em telas pequenas, os filtros podem quebrar
+       naturalmente para novas linhas.
+    */
+
+    .card-filtros .row {
+        row-gap: 10px;
+    }
+
 }
 
 
-/* ============================================================
-   11. AJUSTES DE ESPAÇAMENTO
-   ============================================================ */
-
-.row.g-3 {
-    --bs-gutter-x: 0.75rem;
-
-    --bs-gutter-y: 0.75rem;
-}
-
-
-/* Evita que o gráfico fique colado nos cards */
+/* ================================================================
+   21. ESPAÇAMENTO ENTRE COLUNAS
+================================================================ */
 
 .col-lg-5 {
     padding-right: 6px;
@@ -1209,126 +700,6 @@ body {
 }
 
 
-/* ============================================================
-   12. ACABAMENTO GERAL DOS CARDS
-   ============================================================ */
-
-.card {
-    border-color: transparent;
-}
-
-
-/* Remove excesso de espaço vertical */
-
-.mb-4 {
-    margin-bottom: 18px !important;
-}
-
-
-
-/* =========================================================
-   V3 - AJUSTES FINAIS DO PAINEL
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   CARD DOS FILTROS
-   --------------------------------------------------------- */
-
-.card:has(#filtroComando) {
-    margin-bottom: 18px !important;
-    padding: 0 !important;
-    border-radius: 14px !important;
-    background: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10) !important;
-
-    transition:
-        transform 0.20s ease,
-        box-shadow 0.20s ease !important;
-}
-
-/* Pequena animação ao passar o mouse nos filtros */
-.card:has(#filtroComando):hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.14) !important;
-}
-
-/* Espaçamento interno do card dos filtros */
-.card:has(#filtroComando) .card-body {
-    padding: 14px 18px !important;
-}
-
-
-/* ---------------------------------------------------------
-   CAMPOS DOS FILTROS
-   --------------------------------------------------------- */
-
-.card:has(#filtroComando) .form-select,
-.card:has(#filtroComando) .form-control {
-    min-height: 40px;
-
-    transition:
-        border-color 0.20s ease,
-        box-shadow 0.20s ease,
-        transform 0.20s ease;
-}
-
-/* Efeito ao passar o mouse */
-.card:has(#filtroComando) .form-select:hover,
-.card:has(#filtroComando) .form-control:hover {
-    border-color: #9aa7b3;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* Efeito ao clicar */
-.card:has(#filtroComando) .form-select:focus,
-.card:has(#filtroComando) .form-control:focus {
-    border-color: #6c757d;
-    box-shadow: 0 0 0 0.15rem rgba(108, 117, 125, 0.15);
-}
-
-
-/* ---------------------------------------------------------
-   BOTÃO LIMPAR
-   --------------------------------------------------------- */
-
-#btnLimparFiltros {
-    min-height: 40px;
-
-    transition:
-        transform 0.20s ease,
-        box-shadow 0.20s ease,
-        background-color 0.20s ease;
-}
-
-#btnLimparFiltros:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-
-/* ---------------------------------------------------------
-   ESPAÇAMENTO ENTRE FILTROS E ÁREA DOS CARDS/GRÁFICO
-   --------------------------------------------------------- */
-
-.card:has(#filtroComando) + .row {
-    margin-top: 40px !important;
-}
-
-
-/* ---------------------------------------------------------
-   ALTURA DOS CARDS INDICADORES
-   --------------------------------------------------------- */
-
-.card-indicador {
-    min-height: 122px;
-    height: 122px;
-}
-
-
-/* ---------------------------------------------------------
-   GRÁFICO
-   --------------------------------------------------------- */
-
-#graficoSubclasse {
-    width: 100% !important;
-}
+/* ================================================================
+   FIM DO STYLE.CSS - V3
+================================================================ */

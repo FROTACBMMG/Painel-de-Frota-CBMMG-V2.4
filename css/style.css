@@ -713,7 +713,7 @@ table.dataTable tbody tr.selected {
 
 /* Número do Total da Frota */
 #totalFrota {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 1;
 }
 
@@ -726,7 +726,7 @@ table.dataTable tbody tr.selected {
 
 /* Texto da idade média */
 #cardIdadeMedia {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 1.1;
 }
 

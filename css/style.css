@@ -725,7 +725,7 @@ table.dataTable tbody tr.selected {
 }
 
 /* Texto da idade média */
-#cardIdadeMedia {
+#IdadeMedia {
     font-size: 1.7rem;
     line-height: 1.1;
 }

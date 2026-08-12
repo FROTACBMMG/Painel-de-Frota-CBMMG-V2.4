@@ -249,27 +249,49 @@
         <div class="row g-3">
 
             <!-- CARD 1 TOTAL DA FROTA -->
-            <div class="col-md-4">
+            <!-- CARD 1 - TOTAL DA FROTA -->
 
-                <div class="card shadow card-indicador">
+<div class="col-md-4">
 
-                    <div class="card-body">
+    <div class="card shadow card-indicador">
 
-                        <h6 class="card-titulo">
-                            <i class="fa-solid fa-truck"></i>
-                            <i class="fa-solid fa-fire"></i>
-                            Total da Frota
-                        </h6>
+        <div class="card-body">
 
-                        <h2 id="totalFrota" class="fw-bold">
-                            0
-                        </h2>
+            <h6 class="card-titulo">
+                <i class="fa-solid fa-truck"></i>
+                <i class="fa-solid fa-fire"></i>
+                Total da Frota
+            </h6>
 
+            <div class="indicador-valor-central">
+
+                <h2
+                    id="totalFrota"
+                    class="fw-bold mb-0">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="d-flex align-items-center mt-2">
+
+                <div class="progress flex-grow-1">
+
+                    <div
+                        id="barraTotalFrota"
+                        class="progress-bar bg-dark"
+                        style="width:100%">
                     </div>
 
                 </div>
 
             </div>
+
+        </div>
+
+    </div>
+
+</div>
 
             <!-- CARD 2 DISPONÍVEIS -->
 
@@ -420,6 +442,8 @@
 
            <!-- CARD 5 IDADE MÉDIA -->
 
+<!-- CARD 5 - IDADE MÉDIA -->
+
 <div class="col-md-4">
 
     <div class="card shadow card-indicador">
@@ -431,11 +455,29 @@
                 Idade Média
             </h6>
 
-            <h5
-                id="idadeMedia"
-                class="fw-bold">
-                ---
-            </h5>
+            <div class="indicador-idade-media">
+
+                <h5
+                    id="cardIdadeMedia"
+                    class="fw-bold mb-0">
+                    0 anos
+                </h5>
+
+            </div>
+
+            <div class="d-flex align-items-center mt-2">
+
+                <div class="progress flex-grow-1">
+
+                    <div
+                        id="barraIdadeMedia"
+                        class="progress-bar bg-info"
+                        style="width:100%">
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 

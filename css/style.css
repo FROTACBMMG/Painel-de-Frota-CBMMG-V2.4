@@ -699,7 +699,46 @@ table.dataTable tbody tr.selected {
     padding-left: 6px;
 }
 
+/* ==========================================================
+   V3 - AJUSTE DOS CARDS TOTAL E IDADE MÉDIA
+   ========================================================== */
 
+/* Valor central do card Total da Frota */
+.indicador-valor-central {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+}
+
+/* Número do Total da Frota */
+#totalFrota {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Card Idade Média */
+.indicador-idade-media {
+    display: flex;
+    align-items: center;
+    min-height: 55px;
+}
+
+/* Texto da idade média */
+#idadeMedia {
+    font-size: 1.15rem;
+    line-height: 1.1;
+}
+
+/* Barra preta do Total da Frota */
+#barraTotalFrota {
+    background-color: #000 !important;
+}
+
+/* Barra azul da Idade Média */
+#barraIdadeMedia {
+    background-color: #0d9fdb !important;
+}
 
 /* ================================================================
    FIM DO STYLE.CSS - V3

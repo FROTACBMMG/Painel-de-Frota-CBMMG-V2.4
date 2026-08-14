@@ -182,9 +182,10 @@ body {
     border-color: #9aa7b3;
 
     box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.08);
-}
+        0 4px 10px rgba(0, 0, 0, 0.10);
 
+    transform: translateY(-2px);
+}
 
 /* Efeito ao clicar */
 

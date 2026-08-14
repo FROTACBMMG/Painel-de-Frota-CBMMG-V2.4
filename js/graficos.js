@@ -386,10 +386,55 @@ function atualizarGraficoSubclasse(dados){
 
         "Disponibilidade (%)";
 
-    graficoSubclasse.data.datasets[0].data =
+    //------------------------------------------------
+// Atualiza valores
+//------------------------------------------------
 
-        lista.map(v=>v.disponibilidade.toFixed(2));
+graficoSubclasse.data.datasets[0].data =
 
-    graficoSubclasse.update();
+    lista.map(function(v){
+
+        return Number(v.disponibilidade.toFixed(2));
+
+    });
+
+
+//------------------------------------------------
+// Define as cores conforme a disponibilidade
+//------------------------------------------------
+
+graficoSubclasse.data.datasets[0].backgroundColor =
+
+    lista.map(function(v){
+
+        if(v.disponibilidade >= 90){
+
+            return "#198754"; // Verde
+
+        }
+
+        if(v.disponibilidade >= 80){
+
+            return "#ffc107"; // Amarelo
+
+        }
+
+        return "#dc3545"; // Vermelho
+
+    });
+
+
+//------------------------------------------------
+// Remove bordas das barras
+//------------------------------------------------
+
+graficoSubclasse.data.datasets[0].borderWidth = 0;
+
+
+//------------------------------------------------
+// Atualiza gráfico
+//------------------------------------------------
+
+graficoSubclasse.update();
 
 }

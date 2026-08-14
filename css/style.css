@@ -356,19 +356,19 @@ body {
 #totalFrota {
     margin-top: 8px;
 
-    font-size: 27px;
+    font-size: 25px;
 
     line-height: 1;
 }
 
 
-/* Combustível e subclasse */
+/* Idade Média e subclasse */
 
 .card-indicador h5,
 .card-indicador h6 {
     margin: 0;
 
-    font-size: 17px;
+    font-size: 25px;
 
     line-height: 1.2;
 

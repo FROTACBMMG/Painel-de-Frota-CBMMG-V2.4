@@ -356,7 +356,7 @@ body {
 #totalFrota {
     margin-top: 5px;
 
-    font-size: 25px;
+    font-size: 20px;
 
     line-height: 1.2;
 }
@@ -367,7 +367,7 @@ body {
 .card-indicador h5,{
     margin: 0;
 
-    font-size: 5px;
+    font-size: 20px;
 
     line-height: 1.2;
 
@@ -379,7 +379,7 @@ body {
 .card-indicador h6 {
     margin: 0;
 
-    font-size: 22px;
+    font-size: 20px;
 
     line-height: 1.2;
 

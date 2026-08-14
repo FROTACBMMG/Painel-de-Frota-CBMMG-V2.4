@@ -229,20 +229,6 @@ body {
 }
 
 
-/* ================================================================
-   7. ESPAÇO ENTRE FILTROS E CARDS/GRÁFICO
-================================================================ */
-
-/*
-   IMPORTANTE:
-   Mantém o espaço visual entre o card dos filtros
-   e a área dos indicadores.
-*/
-
-.card-filtros + .row {
-    margin-top: 40px !important;
-}
-
 
 /* ================================================================
    8. ÁREA PRINCIPAL - CARDS + GRÁFICO

@@ -132,106 +132,67 @@
 <!-- ====================================================== -->
 
 <div class="card-body">
+    <div class="card card-filtros">
 
-    <div class="row g-3">
+    <div class="card-body">
 
-        <!-- COMANDO -->
-        <div class="col-md">
+        <div class="row g-3">
 
-            <select
-                id="filtroComando"
-                class="form-select">
+            <div class="col-md">
+                <select id="filtroComando" class="form-select">
+                    <option value="">Comando Op.</option>
+                </select>
+            </div>
 
-                <option value="">
-                    Comando Op.
-                </option>
+            <div class="col-md">
+                <select id="filtroUnidade" class="form-select">
+                    <option value="">Unidade Principal</option>
+                </select>
+            </div>
 
-            </select>
+            <div class="col-md">
+                <select id="filtroSubclasse" class="form-select">
+                    <option value="">Subclasse</option>
+                </select>
+            </div>
 
-        </div>
+            <div class="col-md">
+                <select id="filtroSituacao" class="form-select">
+                    <option value="">Situação</option>
+                </select>
+            </div>
 
-        <!-- UNIDADE -->
-        <div class="col-md">
+            <div class="col-md">
+                <input
+                    id="filtroPrefixo"
+                    class="form-control"
+                    type="text"
+                    placeholder="Digite o prefixo">
+            </div>
 
-            <select
-                id="filtroUnidade"
-                class="form-select">
+            <div class="col-md">
+                <input
+                    id="filtroPlaca"
+                    class="form-control"
+                    type="text"
+                    placeholder="Digite a placa">
+            </div>
 
-                <option value="">
-                    Unidade Principal
-                </option>
-
-            </select>
-
-        </div>
-
-        <!-- SUBCLASSE -->
-        <div class="col-md">
-
-            <select
-                id="filtroSubclasse"
-                class="form-select">
-
-                <option value="">
-                    Subclasse
-                </option>
-
-            </select>
-
-        </div>
-
-        <!-- SITUAÇÃO -->
-        <div class="col-md">
-
-            <select
-                id="filtroSituacao"
-                class="form-select">
-
-                <option value="">
-                    Situação
-                </option>
-
-            </select>
-
-        </div>
-
-        <!-- PREFIXO -->
-        <div class="col-md">
-
-            <input
-                id="filtroPrefixo"
-                class="form-control"
-                type="text"
-                placeholder="Digite o prefixo">
-
-        </div>
-
-        <!-- PLACA -->
-        <div class="col-md">
-
-            <input
-                id="filtroPlaca"
-                class="form-control"
-                type="text"
-                placeholder="Digite a placa">
-
-        </div>
-
-        <!-- LIMPAR -->
-        <div class="col-md-2">
-
-            <button
-                id="btnLimparFiltros"
-                class="btn btn-secondary w-100">
-
-                <i class="fa-solid fa-broom"></i>
-                Limpar
-
-            </button>
+            <div class="col-md-2 d-flex align-items-end">
+                <button
+                    id="btnLimparFiltros"
+                    class="btn btn-secondary w-100">
+                    <i class="fa-solid fa-broom"></i>
+                    Limpar
+                </button>
+            </div>
 
         </div>
 
     </div>
+
+</div>
+    
 
 </div>
 <!-- ====================================================== -->

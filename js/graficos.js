@@ -227,11 +227,26 @@ function criarGraficoSubclasse(){
 
                 datasets:[{
 
-                    label:"Quantidade",
+    label:"Quantidade",
 
-                    data:[]
+    data:[],
 
-                }]
+    backgroundColor:[
+        "#0057A8", // Azul CBMMG
+        "#198754", // Verde
+        "#FFC107", // Amarelo
+        "#DC3545", // Vermelho
+        "#6F42C1", // Roxo
+        "#0DCAF0", // Azul claro
+        "#FD7E14", // Laranja
+        "#20C997", // Verde água
+        "#6C757D", // Cinza
+        "#343A40"  // Cinza escuro
+    ],
+
+    borderWidth:1
+
+}]
 
             },
 

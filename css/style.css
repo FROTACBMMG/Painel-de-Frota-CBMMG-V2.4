@@ -642,7 +642,7 @@ table.dataTable tbody tr.selected {
     }
 
     .logo-cbmmg {
-        height: 60px;
+        height: 70px;
     }
 
     .titulo-painel {
@@ -699,6 +699,11 @@ table.dataTable tbody tr.selected {
     padding-left: 6px;
 }
 
+/* Cor do valor da Idade Média */
+#cardIdadeMedia {
+    font-size: 25px;
+    color: #0d9fdb !important;
+}
 
 
 /* ================================================================

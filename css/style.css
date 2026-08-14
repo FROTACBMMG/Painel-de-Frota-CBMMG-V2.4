@@ -240,7 +240,7 @@ body {
 */
 
 .card-filtros + .row {
-    margin-top: 18px !important;
+    margin-top: 30px !important;
 }
 
 
@@ -354,11 +354,11 @@ body {
 /* Total da frota */
 
 #totalFrota {
-    margin-top: 8px;
+    margin-top: 5px;
 
     font-size: 25px;
 
-    line-height: 1;
+    line-height: 1.2;
 }
 
 

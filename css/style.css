@@ -364,17 +364,6 @@ body {
 
 /* Idade Média e subclasse */
 
-.card-indicador h5,{
-    margin: 0;
-
-    font-size: 50px;
-
-    line-height: 1.2;
-
-    font-weight: 700;
-
-    color: #200000;
-}
 
 .card-indicador h6 {
     margin: 0;

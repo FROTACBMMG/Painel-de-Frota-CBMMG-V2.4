@@ -321,6 +321,9 @@ body {
 .card-titulo i {
     margin-right: 4px;
 }
+.card-titulo .fa-calendar-days {
+    color: #0d9fdb;
+}
 
 
 /* ================================================================

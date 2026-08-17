@@ -179,7 +179,11 @@ function atualizarSubclasse(dados) {
 
 function atualizarBarrasIndicadores(dados){
 
-    const total = dados.length;
+    const total = dados.filter(function (v) {
+
+    return v.situacao !== SITUACAO.DESCARGA;
+
+}).length;
 
     if(total===0) return;
 

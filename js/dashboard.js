@@ -210,8 +210,8 @@ function atualizarBarrasIndicadores(dados){
 
    
 
-    document.getElementById("barraDescarga").style.width =
-        percDescarga + "%";
+    //document.getElementById("barraDescarga").style.width =
+      //  percDescarga + "%";
 
    
 

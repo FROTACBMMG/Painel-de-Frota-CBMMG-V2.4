@@ -413,7 +413,7 @@ graficoSubclasse.data.datasets[0].backgroundColor =
 
         }
 
-        if(v.disponibilidade >= 60){
+        if(v.disponibilidade >= 70){
 
             return "#ffc107"; // Amarelo
 

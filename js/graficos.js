@@ -407,13 +407,13 @@ graficoSubclasse.data.datasets[0].backgroundColor =
 
     lista.map(function(v){
 
-        if(v.disponibilidade >= 90){
+        if(v.disponibilidade >= 85){
 
             return "#198754"; // Verde
 
         }
 
-        if(v.disponibilidade >= 80){
+        if(v.disponibilidade >= 60){
 
             return "#ffc107"; // Amarelo
 

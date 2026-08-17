@@ -36,12 +36,15 @@ function atualizarIndicadores(dados) {
 
 function atualizarTotal(dados) {
 
+    const frotaUtil = dados.filter(function(v) {
+
+        return v.situacao !== SITUACAO.DESCARGA;
+
+    });
+
     atualizarTexto(
-
         "totalFrota",
-
-        inteiro(dados.length)
-
+        inteiro(frotaUtil.length)
     );
 
 }

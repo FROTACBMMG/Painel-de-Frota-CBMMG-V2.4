@@ -225,9 +225,9 @@ function atualizarBarrasIndicadores(dados){
         percManutencao.toFixed(1) + "%"
     );
 
-    atualizarTexto(
-        "percentualDescarga",
-        percDescarga.toFixed(1) + "%"
-    );
+  //  atualizarTexto(
+   //     "percentualDescarga",
+   //     percDescarga.toFixed(1) + "%"
+  //  );
 
 }

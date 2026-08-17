@@ -1,7 +1,13 @@
-﻿/********************************************************************
+/********************************************************************
  * Painel da Frota CBMMG
  * filtros.js
- * Versão 2.0
+ * Versão 3.0
+ *
+ * Suporte a múltipla seleção nos filtros:
+ * • Comando
+ * • Unidade Principal
+ * • Subclasse
+ * • Situação
  ********************************************************************/
 
 "use strict";
@@ -32,25 +38,35 @@ function inicializarFiltros() {
         valoresUnicos(dadosOriginais, "situacao")
     );
 
+
+    //==================================================
+    // Comando
+    //==================================================
+
     document
-    .getElementById("filtroComando")
-    .addEventListener(
-        "change",
-        function () {
+        .getElementById("filtroComando")
+        .addEventListener(
+            "change",
+            function () {
 
-            atualizarFiltroUnidade();
+                atualizarFiltroUnidade();
 
-            aplicarFiltros();
+                aplicarFiltros();
 
-        }
-    );
+            }
+        );
+
+
+    //==================================================
+    // Demais filtros
+    //==================================================
 
     [
-    "filtroUnidade",
-    "filtroSubclasse",
-    "filtroSituacao"
+        "filtroUnidade",
+        "filtroSubclasse",
+        "filtroSituacao"
 
-    ].forEach(id => {
+    ].forEach(function(id) {
 
         document
             .getElementById(id)
@@ -61,11 +77,16 @@ function inicializarFiltros() {
 
     });
 
+
+    //==================================================
+    // Prefixo e placa
+    //==================================================
+
     [
         "filtroPrefixo",
         "filtroPlaca"
 
-    ].forEach(id => {
+    ].forEach(function(id) {
 
         document
             .getElementById(id)
@@ -76,6 +97,11 @@ function inicializarFiltros() {
 
     });
 
+
+    //==================================================
+    // Botão limpar
+    //==================================================
+
     document
         .getElementById("btnLimparFiltros")
         .addEventListener(
@@ -85,38 +111,81 @@ function inicializarFiltros() {
 
 }
 
+
 //==================================================
-// Atualiza lista de unidades conforme comando
+// Retorna valores selecionados em um SELECT múltiplo
+//==================================================
+
+function valoresSelecionados(id) {
+
+    const select = document.getElementById(id);
+
+    if (!select)
+        return [];
+
+    return Array.from(select.selectedOptions)
+
+        .map(function(option) {
+
+            return option.value;
+
+        })
+
+        .filter(function(valor) {
+
+            return valor !== "";
+
+        });
+
+}
+
+
+//==================================================
+// Atualiza lista de unidades conforme comandos
 //==================================================
 
 function atualizarFiltroUnidade() {
 
-    const comando = document.getElementById("filtroComando").value;
+    const comandos =
+        valoresSelecionados("filtroComando");
 
     let unidades;
 
-    if (comando === "") {
+
+    //==================================================
+    // Nenhum comando selecionado
+    //==================================================
+
+    if (comandos.length === 0) {
 
         unidades = valoresUnicos(
             dadosOriginais,
             "unidadePrincipal"
         );
 
-    } else {
+    }
+
+
+    //==================================================
+    // Um ou mais comandos selecionados
+    //==================================================
+
+    else {
 
         unidades = valoresUnicos(
 
-            dadosOriginais.filter(v =>
+            dadosOriginais.filter(function(v) {
 
-                v.comando === comando
+                return comandos.includes(v.comando);
 
-            ),
+            }),
 
             "unidadePrincipal"
 
         );
 
     }
+
 
     preencherSelect(
         "filtroUnidade",
@@ -125,21 +194,22 @@ function atualizarFiltroUnidade() {
 
 }
 
+
 //==================================================
 // Aplica filtros
 //==================================================
 
 function aplicarFiltros() {
 
-    dadosFiltrados = dadosOriginais.filter(
-
-        filtrarRegistro
-
-    );
+    dadosFiltrados =
+        dadosOriginais.filter(
+            filtrarRegistro
+        );
 
     atualizarPainel();
 
 }
+
 
 //==================================================
 // Filtra um registro
@@ -147,17 +217,18 @@ function aplicarFiltros() {
 
 function filtrarRegistro(registro) {
 
-    const comando =
-        document.getElementById("filtroComando").value;
+    const comandos =
+        valoresSelecionados("filtroComando");
 
-    const unidade =
-        document.getElementById("filtroUnidade").value;
+    const unidades =
+        valoresSelecionados("filtroUnidade");
 
-    const subclasse =
-        document.getElementById("filtroSubclasse").value;
+    const subclasses =
+        valoresSelecionados("filtroSubclasse");
 
-    const situacao =
-        document.getElementById("filtroSituacao").value;
+    const situacoes =
+        valoresSelecionados("filtroSituacao");
+
 
     const prefixo =
         document
@@ -166,6 +237,7 @@ function filtrarRegistro(registro) {
             .trim()
             .toUpperCase();
 
+
     const placa =
         document
             .getElementById("filtroPlaca")
@@ -173,45 +245,105 @@ function filtrarRegistro(registro) {
             .trim()
             .toUpperCase();
 
-    if (
-        comando &&
-        registro.comando !== comando
-    )
-        return false;
+
+    //==================================================
+    // Comando
+    //==================================================
 
     if (
-        unidade &&
-        registro.unidadePrincipal !== unidade
+
+        comandos.length > 0 &&
+
+        !comandos.includes(registro.comando)
+
     )
+
         return false;
 
-    if (
-        subclasse &&
-        registro.subclasse !== subclasse
-    )
-        return false;
+
+    //==================================================
+    // Unidade
+    //==================================================
 
     if (
-        situacao &&
-        registro.situacao !== situacao
+
+        unidades.length > 0 &&
+
+        !unidades.includes(registro.unidadePrincipal)
+
     )
+
         return false;
 
+
+    //==================================================
+    // Subclasse
+    //==================================================
+
     if (
+
+        subclasses.length > 0 &&
+
+        !subclasses.includes(registro.subclasse)
+
+    )
+
+        return false;
+
+
+    //==================================================
+    // Situação
+    //==================================================
+
+    if (
+
+        situacoes.length > 0 &&
+
+        !situacoes.includes(registro.situacao)
+
+    )
+
+        return false;
+
+
+    //==================================================
+    // Prefixo
+    //==================================================
+
+    if (
+
         prefixo &&
-        !(registro.prefixo || "").toUpperCase().includes(prefixo)
+
+        !(registro.prefixo || "")
+            .toUpperCase()
+            .includes(prefixo)
+
     )
+
         return false;
 
+
+    //==================================================
+    // Placa
+    //==================================================
+
     if (
+
         placa &&
-        !registro.placa.toUpperCase().includes(placa)
+
+        !(registro.placa || "")
+            .toUpperCase()
+            .includes(placa)
+
     )
+
         return false;
+
 
     return true;
 
 }
+
 
 //==================================================
 // Limpa filtros
@@ -219,48 +351,95 @@ function filtrarRegistro(registro) {
 
 function limparFiltros() {
 
-    document.getElementById("filtroComando").value = "";
+    [
+        "filtroComando",
+        "filtroUnidade",
+        "filtroSubclasse",
+        "filtroSituacao"
 
-    document.getElementById("filtroUnidade").value = "";
+    ].forEach(function(id) {
 
-    document.getElementById("filtroSubclasse").value = "";
+        const select =
+            document.getElementById(id);
 
-    document.getElementById("filtroSituacao").value = "";
+        if (!select)
+            return;
+
+        Array.from(select.options)
+            .forEach(function(option) {
+
+                option.selected = false;
+
+            });
+
+        if (select.options.length > 0)
+
+            select.options[0].selected = true;
+
+    });
+
+
+    //==================================================
+    // Atualiza unidades
+    //==================================================
 
     atualizarFiltroUnidade();
 
-    document.getElementById("filtroPrefixo").value = "";
 
-    document.getElementById("filtroPlaca").value = "";
+    //==================================================
+    // Limpa texto
+    //==================================================
+
+    document
+        .getElementById("filtroPrefixo")
+        .value = "";
+
+    document
+        .getElementById("filtroPlaca")
+        .value = "";
+
 
     aplicarFiltros();
 
 }
 
+
 //==================================================
-// Atualiza filtros
+// Atualiza filtros após atualização dos dados
 //==================================================
 
 function atualizarFiltros() {
 
     preencherSelect(
         "filtroComando",
-        valoresUnicos(dadosOriginais, "comando")
+        valoresUnicos(
+            dadosOriginais,
+            "comando"
+        )
     );
 
     preencherSelect(
         "filtroUnidade",
-        valoresUnicos(dadosOriginais, "unidadePrincipal")
+        valoresUnicos(
+            dadosOriginais,
+            "unidadePrincipal"
+        )
     );
 
     preencherSelect(
         "filtroSubclasse",
-        valoresUnicos(dadosOriginais, "subclasse")
+        valoresUnicos(
+            dadosOriginais,
+            "subclasse"
+        )
     );
 
     preencherSelect(
         "filtroSituacao",
-        valoresUnicos(dadosOriginais, "situacao")
+        valoresUnicos(
+            dadosOriginais,
+            "situacao"
+        )
     );
 
 }

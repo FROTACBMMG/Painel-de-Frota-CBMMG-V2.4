@@ -175,17 +175,192 @@ body {
 }
 
 /* ================================================================
-   FILTROS DE MÚLTIPLA SELEÇÃO
+   FILTROS COM CAIXAS DE SELEÇÃO
 ================================================================ */
 
-.card-filtros .filtro-multiplo {
+.filtro-checkbox {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Botão principal do filtro */
+
+.filtro-checkbox-botao {
+    width: 100%;
     height: 40px;
 
-    min-height: 40px;
+    padding: 0 12px;
+
+    border: 1px solid #d9dee4;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.20s ease,
+        box-shadow 0.20s ease,
+        transform 0.20s ease;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.filtro-checkbox-botao:hover {
+    border-color: #9aa7b3;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* Filtro aberto */
+
+.filtro-checkbox.aberto
+.filtro-checkbox-botao {
+
+    border-color: #b30000;
+
+    box-shadow:
+        0 0 0 3px rgba(179, 0, 0, 0.08);
+}
+
+
+/* Ícone */
+
+.filtro-checkbox-botao i {
+    font-size: 11px;
+
+    transition:
+        transform 0.20s ease;
+}
+
+
+/* Gira a seta */
+
+.filtro-checkbox.aberto
+.filtro-checkbox-botao i {
+
+    transform: rotate(180deg);
+
+}
+
+
+/* Menu */
+
+.filtro-checkbox-menu {
+
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 5px);
+
+    left: 0;
+
+    width: 100%;
+
+    max-height: 280px;
 
     overflow-y: auto;
 
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #d9dee4;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.15);
+
+    z-index: 2000;
+}
+
+
+/* Mostra menu */
+
+.filtro-checkbox.aberto
+.filtro-checkbox-menu {
+
+    display: block;
+
+}
+
+
+/* Cada opção */
+
+.filtro-checkbox-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 7px 8px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    color: #374151;
+
     cursor: pointer;
+
+    transition:
+        background-color 0.15s ease;
+}
+
+
+/* Hover da opção */
+
+.filtro-checkbox-item:hover {
+
+    background-color: #f1f3f5;
+
+}
+
+
+/* Quadradinho */
+
+.filtro-checkbox-item input {
+
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    cursor: pointer;
+
+    accent-color: #b30000;
+
+}
+
+
+/* Texto */
+
+.filtro-checkbox-item span {
+
+    flex: 1;
+
+    line-height: 1.2;
+
 }
 
 

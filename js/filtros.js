@@ -141,38 +141,26 @@ function criarFiltroMultiplo(id, titulo) {
 
 
     filtro
-        .querySelector(
-            ".filtro-checkbox-botao"
-        )
-        .addEventListener(
-            "click",
-            function(event) {
+    .querySelector(".filtro-checkbox-botao")
+    .addEventListener("click", function(event) {
 
-                event.stopPropagation();
+        event.stopPropagation();
 
-                document
-                    .querySelectorAll(
-                        ".filtro-checkbox.aberto"
-                    )
-                    .forEach(function(outro) {
+        // Fecha os outros filtros
+        document
+            .querySelectorAll(".filtro-checkbox.aberto")
+            .forEach(function(outro) {
 
-                        if (outro !== filtro) {
+                if (outro !== filtro) {
+                    outro.classList.remove("aberto");
+                }
 
-                            outro.classList.remove(
-                                "aberto"
-                            );
+            });
 
-                        }
+        // Abre/fecha o filtro clicado
+        filtro.classList.toggle("aberto");
 
-                    });
-
-                filtro.classList.toggle(
-                    "aberto"
-                );
-
-            }
-        );
-
+    });
 }
 
 

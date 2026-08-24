@@ -138,33 +138,85 @@
 
         <div class="row g-3">
 
-           <div class="col-md">
+
+            <div class="filtro-multiselect" id="filtroComandoContainer">
+
+    <button
+        type="button"
+        class="filtro-multiselect-botao"
+        onclick="alternarFiltro('filtrofiltroComandoContainer')">
+        Comando
+        <span>⌄</span>
+    </button>
+
     <div
-        id="filtroComando"
-        class="filtro-checkbox">
+        class="filtro-multiselect-menu"
+        id="filtroComandoMenu">
     </div>
+
 </div>
 
-<div class="col-md">
+
+<div class="filtro-multiselect" id="filtroUnidadeContainer">
+
+    <button
+        type="button"
+        class="filtro-multiselect-botao"
+        onclick="alternarFiltro('filtroSubclasseContainer')">
+        Unidade
+        <span>⌄</span>
+    </button>
+
     <div
-        id="filtroUnidade"
-        class="filtro-checkbox">
+        class="filtro-multiselect-menu"
+        id="filtroUnidadeMenu">
     </div>
+
+</div>
+            
+            
+<div class="filtro-multiselect" id="filtroSubclasseContainer">
+
+    <button
+        type="button"
+        class="filtro-multiselect-botao"
+        onclick="alternarFiltro('filtroSubclasseContainer')">
+        Subclasse
+        <span>⌄</span>
+    </button>
+
+    <div
+        class="filtro-multiselect-menu"
+        id="filtroSubclasseMenu">
+    </div>
+
 </div>
 
-<div class="col-md">
-    <div
-        id="filtroSubclasse"
-        class="filtro-checkbox">
-    </div>
-</div>
 
-<div class="col-md">
+            //<div class="col-md">
     <div
         id="filtroSituacao"
         class="filtro-checkbox">
     </div>
-</div> 
+</div> //
+
+ <div class="filtro-multiselect" id="filtroSituacaoContainer">
+
+    <button
+        type="button"
+        class="filtro-multiselect-botao"
+        onclick="alternarFiltro('filtroSubclasseContainer')">
+        Situacao
+        <span>⌄</span>
+    </button>
+
+    <div
+        class="filtro-multiselect-menu"
+        id="filtroSituacaoMenu">
+    </div>
+
+</div>
+            
 
             <div class="col-md">
                 <input

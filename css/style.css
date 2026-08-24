@@ -114,6 +114,9 @@ body {
 ================================================================ */
 
 .card-filtros {
+    position: relative;
+    z-index: 10;
+
     border: none !important;
 
     border-radius: 14px !important;
@@ -228,8 +231,7 @@ body {
 
 /* Filtro aberto */
 
-.filtro-checkbox.aberto
-.filtro-checkbox-botao {
+.filtro-checkbox.aberto .filtro-checkbox-botao {
 
     border-color: #b30000;
 
@@ -293,11 +295,8 @@ body {
 
 /* Mostra menu */
 
-.filtro-checkbox.aberto
-.filtro-checkbox-menu {
-
+.filtro-checkbox.aberto .filtro-checkbox-menu {
     display: block;
-
 }
 
 

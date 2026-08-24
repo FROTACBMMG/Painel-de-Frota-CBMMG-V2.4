@@ -35,25 +35,29 @@ function inicializarFiltros() {
     );
 
 
-    preencherFiltroMultiplo(
-        "filtroComando",
-        valoresUnicos(dadosOriginais, "comando")
-    );
+    preencherFiltroCheckbox(
+    "filtroComandoContainer",
+    valoresUnicos(dadosOriginais, "comando"),
+    "comando"
+);
 
-    preencherFiltroMultiplo(
-        "filtroUnidade",
-        valoresUnicos(dadosOriginais, "unidadePrincipal")
-    );
+    preencherFiltroCheckbox(
+    "filtroUnidadeContainer",
+    valoresUnicos(dadosOriginais, "unidadePrincipal"),
+    "unidadePrincipal"
+);
 
-    preencherFiltroMultiplo(
-        "filtroSubclasse",
-        valoresUnicos(dadosOriginais, "subclasse")
-    );
+    preencherFiltroCheckbox(
+    "filtroSubclasseContainer",
+    valoresUnicos(dadosOriginais, "subclasse"),
+    "subclasse"
+);
 
-    preencherFiltroMultiplo(
-        "filtroSituacao",
-        valoresUnicos(dadosOriginais, "situacao")
-    );
+    preencherFiltroCheckbox(
+    "filtroSituacaoContainer",
+    valoresUnicos(dadosOriginais, "situacao"),
+    "situacao"
+);
 
 
     //==================================================
@@ -672,5 +676,107 @@ function atualizarFiltros() {
             "situacao"
         )
     );
+
+}
+
+//==================================================
+// Abre/fecha filtro
+//==================================================
+
+function alternarFiltro(id) {
+
+    const container = document.getElementById(id);
+
+    const menu = container.querySelector(
+        ".filtro-multiselect-menu"
+    );
+
+    // Fecha os outros filtros
+    document
+        .querySelectorAll(".filtro-multiselect-menu")
+        .forEach(function(outroMenu) {
+
+            if(outroMenu !== menu) {
+
+                outroMenu.classList.remove("aberto");
+
+            }
+
+        });
+
+    menu.classList.toggle("aberto");
+
+}
+
+
+//==================================================
+// Fecha filtros ao clicar fora
+//==================================================
+
+document.addEventListener("click", function(event) {
+
+    if(!event.target.closest(".filtro-multiselect")) {
+
+        document
+            .querySelectorAll(".filtro-multiselect-menu")
+            .forEach(function(menu) {
+
+                menu.classList.remove("aberto");
+
+            });
+
+    }
+
+});
+//==================================================
+// Preenche filtro com checkbox
+//==================================================
+
+function preencherFiltroCheckbox(containerId, lista, campo) {
+
+    const container =
+        document.getElementById(containerId);
+
+    if(!container)
+        return;
+
+    const menu =
+        container.querySelector(
+            ".filtro-multiselect-menu"
+        );
+
+    menu.innerHTML = "";
+
+    lista.forEach(function(valor) {
+
+        const label =
+            document.createElement("label");
+
+        label.className =
+            "filtro-multiselect-opcao";
+
+        const checkbox =
+            document.createElement("input");
+
+        checkbox.type = "checkbox";
+
+        checkbox.value = valor;
+
+        checkbox.dataset.campo = campo;
+
+        checkbox.addEventListener(
+            "change",
+            aplicarFiltros
+        );
+
+        label.appendChild(checkbox);
+
+        label.appendChild(
+            document.createTextNode(valor)
+        );
+
+        menu.appendChild(label);
+
+    });
 
 }

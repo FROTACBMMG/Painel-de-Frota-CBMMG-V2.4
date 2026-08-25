@@ -34,6 +34,44 @@ function inicializarFiltros() {
         "Situação"
     );
 
+
+    //==================================================
+    // Preenche opções dos filtros
+    //==================================================
+
+    preencherFiltroMultiplo(
+        "filtroComando",
+        valoresUnicos(
+            dadosOriginais,
+            "comando"
+        )
+    );
+
+    preencherFiltroMultiplo(
+        "filtroUnidade",
+        valoresUnicos(
+            dadosOriginais,
+            "unidadePrincipal"
+        )
+    );
+
+    preencherFiltroMultiplo(
+        "filtroSubclasse",
+        valoresUnicos(
+            dadosOriginais,
+            "subclasse"
+        )
+    );
+
+    preencherFiltroMultiplo(
+        "filtroSituacao",
+        valoresUnicos(
+            dadosOriginais,
+            "situacao"
+        )
+    );
+
+
     //==================================================
     // Prefixo
     //==================================================

@@ -316,27 +316,34 @@ function atualizarGraficoSubclasse(dados){
 
     dados.forEach(function(v){
 
-        if(!comandos[v.comando]){
+    // Veículos em processo de descarga
+    // não participam do cálculo de disponibilidade
 
-            comandos[v.comando]={
+    if(v.situacao === SITUACAO.DESCARGA)
+        return;
 
-                total:0,
 
-                disponiveis:0
+    if(!comandos[v.comando]){
 
-            };
+        comandos[v.comando]={
 
-        }
+            total:0,
 
-        comandos[v.comando].total++;
+            disponiveis:0
 
-        if(v.situacao===SITUACAO.DISPONIVEL){
+        };
 
-            comandos[v.comando].disponiveis++;
+    }
 
-        }
+    comandos[v.comando].total++;
 
-    });
+    if(v.situacao === SITUACAO.DISPONIVEL){
+
+        comandos[v.comando].disponiveis++;
+
+    }
+
+});
 
     //------------------------------------------------
     // Calcula disponibilidade
